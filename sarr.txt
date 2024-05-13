@@ -1,0 +1,1100 @@
+Number of elements: 1098
+
+Piano, Piano right: Piano, Piano right
+Piano
+<music21.clef.TrebleClef>
+<music21.tempo.MetronomeMark andante Quarter=74>
+C major
+<music21.meter.TimeSignature 4/4>
+<music21.note.Rest eighth>
+<music21.note.Note G>
+<music21.note.Note C>
+<music21.tempo.MetronomeMark Quarter=75>
+<music21.note.Note E>
+<music21.tempo.MetronomeMark andante Quarter=74>
+<music21.note.Note G>
+<music21.note.Note C>
+<music21.note.Note E>
+<music21.note.Rest eighth>
+<music21.note.Note G>
+<music21.note.Note C>
+<music21.note.Note E>
+<music21.tempo.MetronomeMark Quarter=75>
+<music21.note.Note G>
+<music21.note.Note C>
+<music21.note.Note E>
+<music21.tempo.MetronomeMark andante Quarter=74>
+<music21.note.Rest eighth>
+<music21.note.Note A>
+<music21.tempo.MetronomeMark Quarter=76>
+<music21.note.Note D>
+<music21.tempo.MetronomeMark andantino Quarter=78>
+<music21.note.Note F>
+<music21.tempo.MetronomeMark Quarter=76>
+<music21.note.Note A>
+<music21.note.Note D>
+<music21.note.Note F>
+<music21.tempo.MetronomeMark Quarter=75>
+<music21.note.Rest eighth>
+<music21.note.Note A>
+<music21.tempo.MetronomeMark Quarter=77>
+<music21.note.Note D>
+<music21.tempo.MetronomeMark andantino Quarter=79>
+<music21.note.Note F>
+<music21.tempo.MetronomeMark Quarter=77>
+<music21.note.Note A>
+<music21.note.Note D>
+<music21.tempo.MetronomeMark andante Quarter=74>
+<music21.note.Note F>
+<music21.tempo.MetronomeMark Quarter=75>
+<music21.note.Rest eighth>
+<music21.note.Note G>
+<music21.tempo.MetronomeMark Quarter=77>
+<music21.note.Note D>
+<music21.tempo.MetronomeMark andantino Quarter=80>
+<music21.note.Note F>
+<music21.tempo.MetronomeMark Quarter=77>
+<music21.note.Note G>
+<music21.note.Note D>
+<music21.note.Note F>
+<music21.tempo.MetronomeMark Quarter=75>
+<music21.note.Rest eighth>
+<music21.note.Note G>
+<music21.tempo.MetronomeMark Quarter=76>
+<music21.note.Note D>
+<music21.tempo.MetronomeMark andantino Quarter=78>
+<music21.note.Note F>
+<music21.tempo.MetronomeMark Quarter=76>
+<music21.note.Note G>
+<music21.note.Note D>
+<music21.tempo.MetronomeMark andante Quarter=73>
+<music21.note.Note F>
+<music21.tempo.MetronomeMark Quarter=76>
+<music21.note.Rest eighth>
+<music21.note.Note G>
+<music21.note.Note C>
+<music21.tempo.MetronomeMark andantino Quarter=79>
+<music21.note.Note E>
+<music21.tempo.MetronomeMark Quarter=76>
+<music21.note.Note G>
+<music21.note.Note C>
+<music21.tempo.MetronomeMark andante Quarter=73>
+<music21.note.Note E>
+<music21.tempo.MetronomeMark Quarter=76>
+<music21.note.Rest eighth>
+<music21.note.Note G>
+<music21.note.Note C>
+<music21.tempo.MetronomeMark andantino Quarter=78>
+<music21.note.Note E>
+<music21.tempo.MetronomeMark Quarter=76>
+<music21.note.Note G>
+<music21.note.Note C>
+<music21.note.Note E>
+<music21.tempo.MetronomeMark andante Quarter=74>
+<music21.note.Rest eighth>
+<music21.note.Note A>
+<music21.tempo.MetronomeMark Quarter=76>
+<music21.note.Note E>
+<music21.tempo.MetronomeMark andantino Quarter=78>
+<music21.note.Note A>
+<music21.tempo.MetronomeMark Quarter=76>
+<music21.note.Note A>
+<music21.note.Note E>
+<music21.note.Note A>
+<music21.tempo.MetronomeMark andante Quarter=74>
+<music21.note.Rest eighth>
+<music21.note.Note A>
+<music21.tempo.MetronomeMark Quarter=76>
+<music21.note.Note E>
+<music21.tempo.MetronomeMark andantino Quarter=78>
+<music21.note.Note A>
+<music21.tempo.MetronomeMark Quarter=76>
+<music21.note.Note A>
+<music21.note.Note E>
+<music21.tempo.MetronomeMark Quarter=75>
+<music21.note.Note A>
+<music21.tempo.MetronomeMark Quarter=76>
+<music21.note.Rest eighth>
+<music21.note.Note F#>
+<music21.note.Note A>
+<music21.tempo.MetronomeMark andantino Quarter=79>
+<music21.note.Note D>
+<music21.tempo.MetronomeMark Quarter=77>
+<music21.note.Note F#>
+<music21.note.Note A>
+<music21.note.Note D>
+<music21.tempo.MetronomeMark Quarter=75>
+<music21.note.Rest eighth>
+<music21.note.Note F#>
+<music21.note.Note A>
+<music21.tempo.MetronomeMark Quarter=77>
+<music21.note.Note D>
+<music21.note.Note F#>
+<music21.note.Note A>
+<music21.tempo.MetronomeMark andante Quarter=73>
+<music21.note.Note D>
+<music21.tempo.MetronomeMark Quarter=75>
+<music21.note.Rest eighth>
+<music21.note.Note G>
+<music21.tempo.MetronomeMark Quarter=77>
+<music21.note.Note D>
+<music21.tempo.MetronomeMark andantino Quarter=78>
+<music21.note.Note G>
+<music21.tempo.MetronomeMark Quarter=77>
+<music21.note.Note G>
+<music21.note.Note D>
+<music21.tempo.MetronomeMark andante Quarter=74>
+<music21.note.Note G>
+<music21.tempo.MetronomeMark Quarter=75>
+<music21.note.Rest eighth>
+<music21.note.Note G>
+<music21.tempo.MetronomeMark Quarter=77>
+<music21.note.Note D>
+<music21.note.Note G>
+<music21.note.Note G>
+<music21.note.Note D>
+<music21.tempo.MetronomeMark andante Quarter=73>
+<music21.note.Note G>
+<music21.tempo.MetronomeMark Quarter=75>
+<music21.note.Rest eighth>
+<music21.note.Note E>
+<music21.note.Note G>
+<music21.tempo.MetronomeMark Quarter=77>
+<music21.note.Note C>
+<music21.note.Note E>
+<music21.note.Note G>
+<music21.tempo.MetronomeMark andante Quarter=74>
+<music21.note.Note C>
+<music21.tempo.MetronomeMark Quarter=76>
+<music21.note.Rest eighth>
+<music21.note.Note E>
+<music21.note.Note G>
+<music21.tempo.MetronomeMark Quarter=77>
+<music21.note.Note C>
+<music21.note.Note E>
+<music21.note.Note G>
+<music21.tempo.MetronomeMark andante Quarter=73>
+<music21.note.Note C>
+<music21.tempo.MetronomeMark Quarter=76>
+<music21.note.Rest eighth>
+<music21.note.Note E>
+<music21.note.Note G>
+<music21.note.Note C>
+<music21.tempo.MetronomeMark andante Quarter=74>
+<music21.note.Note E>
+<music21.note.Note G>
+<music21.note.Note C>
+<music21.tempo.MetronomeMark Quarter=75>
+<music21.note.Rest eighth>
+<music21.note.Note E>
+<music21.note.Note G>
+<music21.note.Note C>
+<music21.tempo.MetronomeMark andante Quarter=73>
+<music21.note.Note E>
+<music21.note.Note G>
+<music21.tempo.MetronomeMark Quarter=69>
+<music21.note.Note C>
+<music21.tempo.MetronomeMark andante Quarter=73>
+<music21.note.Rest eighth>
+<music21.note.Note D>
+<music21.tempo.MetronomeMark Quarter=75>
+<music21.note.Note F#>
+<music21.note.Note C>
+<music21.note.Note D>
+<music21.note.Note F#>
+<music21.note.Note C>
+<music21.tempo.MetronomeMark andante Quarter=73>
+<music21.note.Rest eighth>
+<music21.note.Note D>
+<music21.tempo.MetronomeMark Quarter=75>
+<music21.note.Note F#>
+<music21.note.Note C>
+<music21.note.Note D>
+<music21.note.Note F#>
+<music21.tempo.MetronomeMark andante Quarter=73>
+<music21.note.Note C>
+<music21.tempo.MetronomeMark Quarter=75>
+<music21.note.Rest eighth>
+<music21.note.Note D>
+<music21.note.Note G>
+<music21.tempo.MetronomeMark Quarter=76>
+<music21.note.Note B>
+<music21.note.Note D>
+<music21.note.Note G>
+<music21.note.Note B>
+<music21.tempo.MetronomeMark Quarter=75>
+<music21.note.Rest eighth>
+<music21.note.Note D>
+<music21.note.Note G>
+<music21.tempo.MetronomeMark Quarter=77>
+<music21.note.Note B>
+<music21.note.Note D>
+<music21.note.Note G>
+<music21.tempo.MetronomeMark andante Quarter=74>
+<music21.note.Note B>
+<music21.tempo.MetronomeMark Quarter=75>
+<music21.note.Rest eighth>
+<music21.note.Note E>
+<music21.note.Note G>
+<music21.tempo.MetronomeMark Quarter=77>
+<music21.note.Note C#>
+<music21.note.Note E>
+<music21.note.Note G>
+<music21.tempo.MetronomeMark andante Quarter=73>
+<music21.note.Note C#>
+<music21.tempo.MetronomeMark Quarter=75>
+<music21.note.Rest eighth>
+<music21.note.Note E>
+<music21.note.Note G>
+<music21.tempo.MetronomeMark Quarter=76>
+<music21.note.Note C#>
+<music21.note.Note E>
+<music21.note.Note G>
+<music21.tempo.MetronomeMark andante Quarter=73>
+<music21.note.Note C#>
+<music21.tempo.MetronomeMark andante Quarter=72>
+<music21.note.Rest 16th>
+<music21.tempo.MetronomeMark Quarter=75>
+<music21.note.Rest 16th>
+<music21.note.Note D>
+<music21.note.Note A>
+<music21.tempo.MetronomeMark Quarter=76>
+<music21.note.Note D>
+<music21.note.Note D>
+<music21.note.Note A>
+<music21.note.Note D>
+<music21.tempo.MetronomeMark Quarter=75>
+<music21.note.Rest eighth>
+<music21.note.Note D>
+<music21.note.Note A>
+<music21.tempo.MetronomeMark Quarter=76>
+<music21.note.Note D>
+<music21.note.Note D>
+<music21.note.Note A>
+<music21.tempo.MetronomeMark andante Quarter=72>
+<music21.note.Note D>
+<music21.tempo.MetronomeMark Quarter=75>
+<music21.note.Rest eighth>
+<music21.note.Note D>
+<music21.note.Note F>
+<music21.tempo.MetronomeMark Quarter=76>
+<music21.note.Note B>
+<music21.note.Note D>
+<music21.note.Note F>
+<music21.note.Note B>
+<music21.tempo.MetronomeMark Quarter=75>
+<music21.note.Rest eighth>
+<music21.note.Note D>
+<music21.note.Note F>
+<music21.tempo.MetronomeMark Quarter=76>
+<music21.note.Note B>
+<music21.note.Note D>
+<music21.note.Note F>
+<music21.tempo.MetronomeMark andante Quarter=73>
+<music21.note.Note B>
+<music21.tempo.MetronomeMark Quarter=75>
+<music21.note.Rest eighth>
+<music21.note.Note C>
+<music21.note.Note G>
+<music21.tempo.MetronomeMark Quarter=77>
+<music21.note.Note C>
+<music21.note.Note C>
+<music21.note.Note G>
+<music21.note.Note C>
+<music21.tempo.MetronomeMark Quarter=75>
+<music21.note.Rest eighth>
+<music21.note.Note C>
+<music21.note.Note G>
+<music21.tempo.MetronomeMark Quarter=77>
+<music21.note.Note C>
+<music21.note.Note C>
+<music21.note.Note G>
+<music21.tempo.MetronomeMark andante Quarter=71>
+<music21.note.Note C>
+<music21.tempo.MetronomeMark Quarter=75>
+<music21.note.Rest eighth>
+<music21.note.Note A>
+<music21.note.Note C>
+<music21.tempo.MetronomeMark Quarter=76>
+<music21.note.Note F>
+<music21.note.Note A>
+<music21.note.Note C>
+<music21.note.Note F>
+<music21.tempo.MetronomeMark Quarter=75>
+<music21.note.Rest eighth>
+<music21.note.Note A>
+<music21.note.Note C>
+<music21.tempo.MetronomeMark Quarter=76>
+<music21.note.Note F>
+<music21.note.Note A>
+<music21.note.Note C>
+<music21.tempo.MetronomeMark andante Quarter=70>
+<music21.note.Note F>
+<music21.tempo.MetronomeMark Quarter=75>
+<music21.note.Rest eighth>
+<music21.note.Note A>
+<music21.note.Note C>
+<music21.tempo.MetronomeMark Quarter=76>
+<music21.note.Note F>
+<music21.note.Note A>
+<music21.note.Note C>
+<music21.tempo.MetronomeMark andante Quarter=71>
+<music21.note.Note F>
+<music21.tempo.MetronomeMark Quarter=75>
+<music21.note.Rest eighth>
+<music21.note.Note A>
+<music21.note.Note C>
+<music21.note.Note F>
+<music21.note.Note A>
+<music21.note.Note C>
+<music21.tempo.MetronomeMark andante Quarter=70>
+<music21.note.Note F>
+<music21.tempo.MetronomeMark Quarter=75>
+<music21.note.Rest eighth>
+<music21.note.Note G>
+<music21.note.Note B>
+<music21.note.Note F>
+<music21.note.Note G>
+<music21.note.Note B>
+<music21.note.Note F>
+<music21.note.Rest eighth>
+<music21.note.Note G>
+<music21.note.Note B>
+<music21.note.Note F>
+<music21.note.Note G>
+<music21.note.Note B>
+<music21.note.Note F>
+<music21.tempo.MetronomeMark andante Quarter=73>
+<music21.note.Rest eighth>
+<music21.note.Note G>
+<music21.tempo.MetronomeMark Quarter=75>
+<music21.note.Note C>
+<music21.note.Note E>
+<music21.note.Note G>
+<music21.note.Note C>
+<music21.note.Note E>
+<music21.tempo.MetronomeMark andante Quarter=73>
+<music21.note.Rest eighth>
+<music21.note.Note G>
+<music21.tempo.MetronomeMark Quarter=75>
+<music21.note.Note C>
+<music21.note.Note E>
+<music21.note.Note G>
+<music21.note.Note C>
+<music21.note.Note E>
+<music21.note.Rest eighth>
+<music21.note.Note B->
+<music21.note.Note C>
+<music21.tempo.MetronomeMark Quarter=77>
+<music21.note.Note E>
+<music21.tempo.MetronomeMark Quarter=75>
+<music21.note.Note B->
+<music21.note.Note C>
+<music21.note.Note E>
+<music21.note.Rest eighth>
+<music21.note.Note B->
+<music21.note.Note C>
+<music21.tempo.MetronomeMark Quarter=77>
+<music21.note.Note E>
+<music21.tempo.MetronomeMark Quarter=75>
+<music21.note.Note B->
+<music21.note.Note C>
+<music21.tempo.MetronomeMark Quarter=69>
+<music21.note.Note E>
+<music21.tempo.MetronomeMark Quarter=75>
+<music21.note.Rest eighth>
+<music21.note.Note A>
+<music21.note.Note C>
+<music21.tempo.MetronomeMark Quarter=76>
+<music21.note.Note E>
+<music21.note.Note A>
+<music21.note.Note C>
+<music21.note.Note E>
+<music21.tempo.MetronomeMark Quarter=75>
+<music21.note.Rest eighth>
+<music21.note.Note A>
+<music21.note.Note C>
+<music21.tempo.MetronomeMark Quarter=76>
+<music21.note.Note E>
+<music21.note.Note A>
+<music21.note.Note C>
+<music21.tempo.MetronomeMark andante Quarter=70>
+<music21.note.Note E>
+<music21.tempo.MetronomeMark andante Quarter=73>
+<music21.note.Rest eighth>
+<music21.note.Note A>
+<music21.note.Note C>
+<music21.tempo.MetronomeMark Quarter=75>
+<music21.note.Note E->
+<music21.note.Note A>
+<music21.note.Note C>
+<music21.note.Note E->
+<music21.tempo.MetronomeMark andante Quarter=73>
+<music21.note.Rest eighth>
+<music21.note.Note A>
+<music21.note.Note C>
+<music21.tempo.MetronomeMark Quarter=75>
+<music21.note.Note E->
+<music21.note.Note A>
+<music21.note.Note C>
+<music21.tempo.MetronomeMark adagietto Quarter=64>
+<music21.note.Note E->
+<music21.tempo.MetronomeMark Quarter=76>
+<music21.note.Rest eighth>
+<music21.note.Note B>
+<music21.note.Note C>
+<music21.note.Note D>
+<music21.tempo.MetronomeMark andantino Quarter=78>
+<music21.note.Note B>
+<music21.note.Note C>
+<music21.tempo.MetronomeMark andante Quarter=73>
+<music21.note.Note D>
+<music21.tempo.MetronomeMark Quarter=76>
+<music21.note.Rest eighth>
+<music21.note.Note B>
+<music21.note.Note C>
+<music21.note.Note D>
+<music21.tempo.MetronomeMark Quarter=77>
+<music21.note.Note B>
+<music21.note.Note C>
+<music21.tempo.MetronomeMark andante Quarter=73>
+<music21.note.Note D>
+<music21.note.Rest eighth>
+<music21.note.Note G>
+<music21.tempo.MetronomeMark Quarter=76>
+<music21.note.Note B>
+<music21.note.Note D>
+<music21.note.Note G>
+<music21.note.Note B>
+<music21.note.Note D>
+<music21.tempo.MetronomeMark andante Quarter=74>
+<music21.note.Rest eighth>
+<music21.note.Note G>
+<music21.tempo.MetronomeMark Quarter=76>
+<music21.note.Note B>
+<music21.note.Note D>
+<music21.note.Note G>
+<music21.note.Note B>
+<music21.tempo.MetronomeMark andante Quarter=72>
+<music21.note.Note D>
+<music21.tempo.MetronomeMark Quarter=75>
+<music21.note.Rest eighth>
+<music21.note.Note G>
+<music21.note.Note C>
+<music21.tempo.MetronomeMark Quarter=76>
+<music21.note.Note E>
+<music21.note.Note G>
+<music21.note.Note C>
+<music21.note.Note E>
+<music21.tempo.MetronomeMark Quarter=75>
+<music21.note.Rest eighth>
+<music21.note.Note G>
+<music21.note.Note C>
+<music21.tempo.MetronomeMark Quarter=76>
+<music21.note.Note E>
+<music21.note.Note G>
+<music21.note.Note C>
+<music21.note.Note E>
+<music21.note.Rest eighth>
+<music21.note.Note G>
+<music21.note.Note C>
+<music21.tempo.MetronomeMark andantino Quarter=78>
+<music21.note.Note F>
+<music21.note.Note G>
+<music21.note.Note C>
+<music21.tempo.MetronomeMark andante Quarter=73>
+<music21.note.Note F>
+<music21.tempo.MetronomeMark andante Quarter=74>
+<music21.note.Rest 16th>
+<music21.tempo.MetronomeMark Quarter=75>
+<music21.note.Rest 16th>
+<music21.note.Note G>
+<music21.note.Note C>
+<music21.tempo.MetronomeMark andantino Quarter=78>
+<music21.note.Note F>
+<music21.note.Note G>
+<music21.tempo.MetronomeMark Quarter=77>
+<music21.note.Note C>
+<music21.tempo.MetronomeMark andante Quarter=73>
+<music21.note.Note F>
+<music21.tempo.MetronomeMark Quarter=75>
+<music21.note.Rest eighth>
+<music21.note.Note G>
+<music21.note.Note B>
+<music21.tempo.MetronomeMark Quarter=77>
+<music21.note.Note F>
+<music21.note.Note G>
+<music21.note.Note B>
+<music21.note.Note F>
+<music21.tempo.MetronomeMark Quarter=75>
+<music21.note.Rest eighth>
+<music21.note.Note G>
+<music21.note.Note B>
+<music21.tempo.MetronomeMark Quarter=77>
+<music21.note.Note F>
+<music21.note.Note G>
+<music21.note.Note B>
+<music21.tempo.MetronomeMark andante Quarter=73>
+<music21.note.Note F>
+<music21.tempo.MetronomeMark Quarter=75>
+<music21.note.Rest eighth>
+<music21.note.Note A>
+<music21.note.Note C>
+<music21.note.Note F#>
+<music21.tempo.MetronomeMark andante Quarter=73>
+<music21.note.Note A>
+<music21.note.Note C>
+<music21.note.Note F#>
+<music21.tempo.MetronomeMark Quarter=75>
+<music21.note.Rest eighth>
+<music21.note.Note A>
+<music21.note.Note C>
+<music21.note.Note F#>
+<music21.tempo.MetronomeMark andante Quarter=73>
+<music21.note.Note A>
+<music21.note.Note C>
+<music21.tempo.MetronomeMark Quarter=69>
+<music21.note.Note F#>
+<music21.tempo.MetronomeMark andante Quarter=70>
+<music21.note.Rest eighth>
+<music21.note.Note G>
+<music21.tempo.MetronomeMark Quarter=75>
+<music21.note.Note C>
+<music21.note.Note G>
+<music21.note.Note G>
+<music21.note.Note C>
+<music21.note.Note G>
+<music21.tempo.MetronomeMark andante Quarter=71>
+<music21.note.Rest eighth>
+<music21.note.Note G>
+<music21.tempo.MetronomeMark Quarter=75>
+<music21.note.Note C>
+<music21.note.Note G>
+<music21.note.Note G>
+<music21.note.Note C>
+<music21.tempo.MetronomeMark andante Quarter=70>
+<music21.note.Note G>
+<music21.tempo.MetronomeMark Quarter=75>
+<music21.note.Rest eighth>
+<music21.note.Note G>
+<music21.note.Note C>
+<music21.note.Note F>
+<music21.tempo.MetronomeMark Quarter=76>
+<music21.note.Note G>
+<music21.note.Note C>
+<music21.note.Note F>
+<music21.tempo.MetronomeMark Quarter=75>
+<music21.note.Rest eighth>
+<music21.note.Note G>
+<music21.note.Note C>
+<music21.note.Note F>
+<music21.tempo.MetronomeMark Quarter=76>
+<music21.note.Note G>
+<music21.note.Note C>
+<music21.note.Note F>
+<music21.tempo.MetronomeMark andante Quarter=70>
+<music21.note.Rest 16th>
+<music21.tempo.MetronomeMark Quarter=75>
+<music21.note.Rest 16th>
+<music21.note.Note G>
+<music21.note.Note B>
+<music21.note.Note F>
+<music21.note.Note G>
+<music21.note.Note B>
+<music21.note.Note F>
+<music21.tempo.MetronomeMark andante Quarter=71>
+<music21.note.Rest 16th>
+<music21.tempo.MetronomeMark Quarter=75>
+<music21.note.Rest 16th>
+<music21.note.Note G>
+<music21.note.Note B>
+<music21.note.Note F>
+<music21.note.Note G>
+<music21.note.Note B>
+<music21.note.Note F>
+<music21.tempo.MetronomeMark andante Quarter=73>
+<music21.note.Rest eighth>
+<music21.note.Note G>
+<music21.note.Note B->
+<music21.tempo.MetronomeMark Quarter=75>
+<music21.note.Note E>
+<music21.note.Note G>
+<music21.note.Note B->
+<music21.tempo.MetronomeMark andante Quarter=70>
+<music21.note.Note E>
+<music21.tempo.MetronomeMark andante Quarter=73>
+<music21.note.Rest eighth>
+<music21.note.Note G>
+<music21.note.Note B->
+<music21.tempo.MetronomeMark Quarter=75>
+<music21.note.Note E>
+<music21.note.Note G>
+<music21.note.Note B->
+<music21.tempo.MetronomeMark andante Quarter=71>
+<music21.note.Note E>
+<music21.tempo.MetronomeMark andante Quarter=73>
+<music21.note.Rest eighth>
+<music21.note.Note F>
+<music21.tempo.MetronomeMark Quarter=75>
+<music21.note.Note A>
+<music21.note.Note C>
+<music21.tempo.MetronomeMark andante Quarter=73>
+<music21.note.Note F>
+<music21.note.Note C>
+<music21.note.Note A>
+<music21.tempo.MetronomeMark Quarter=76>
+<music21.note.Note C>
+<music21.tempo.MetronomeMark andante Quarter=73>
+<music21.note.Note A>
+<music21.note.Note F>
+<music21.note.Note A>
+<music21.tempo.MetronomeMark andante Quarter=71>
+<music21.note.Note F>
+<music21.note.Note D>
+<music21.tempo.MetronomeMark adagietto Quarter=66>
+<music21.note.Note F>
+<music21.tempo.MetronomeMark larghetto Quarter=60>
+<music21.note.Note D>
+<music21.tempo.MetronomeMark andante Quarter=71>
+<music21.note.Rest eighth>
+<music21.note.Note G>
+<music21.note.Note B>
+<music21.note.Note D>
+<music21.note.Note F>
+<music21.note.Note D>
+<music21.note.Note B>
+<music21.tempo.MetronomeMark Quarter=63>
+<music21.note.Note D>
+<music21.note.Note B>
+<music21.note.Note G>
+<music21.note.Note B>
+<music21.tempo.MetronomeMark adagio Quarter=55>
+<music21.tempo.MetronomeMark lento Quarter=54>
+<music21.tempo.MetronomeMark lento Quarter=53>
+<music21.note.Note D>
+<music21.tempo.MetronomeMark lento Quarter=52>
+<music21.tempo.MetronomeMark lento Quarter=51>
+<music21.tempo.MetronomeMark lento Quarter=50>
+<music21.note.Note F>
+<music21.tempo.MetronomeMark Quarter=49>
+<music21.tempo.MetronomeMark largo Quarter=47>
+<music21.tempo.MetronomeMark largo Quarter=46>
+<music21.tempo.MetronomeMark largo Quarter=45>
+<music21.note.Note E>
+<music21.tempo.MetronomeMark largo Quarter=44>
+<music21.tempo.MetronomeMark grave Quarter=42>
+<music21.tempo.MetronomeMark largamente Quarter=31>
+<music21.note.Note D>
+<music21.chord.Chord E4 G4 C5>
+<music21.note.Rest 1.25ql>
+<music21.tempo.MetronomeMark larghetto Quarter=62>
+<music21.note.Rest half>
+<music21.tempo.MetronomeMark Quarter=63>
+<music21.note.Rest dotted-eighth>
+<music21.tempo.MetronomeMark adagietto Quarter=67>
+<music21.note.Rest 16th>
+<music21.tempo.MetronomeMark Quarter=63>
+<music21.note.Rest quarter>
+<music21.tempo.MetronomeMark larghetto Quarter=61>
+<music21.note.Rest eighth>
+<music21.tempo.MetronomeMark Quarter=63>
+<music21.note.Rest 1.75ql>
+<music21.tempo.MetronomeMark larghetto Quarter=61>
+<music21.note.Rest 16th>
+<music21.tempo.MetronomeMark Quarter=63>
+<music21.note.Rest quarter>
+<music21.tempo.MetronomeMark larghetto Quarter=61>
+<music21.note.Rest eighth>
+<music21.tempo.MetronomeMark Quarter=63>
+<music21.note.Rest dotted-eighth>
+<music21.tempo.MetronomeMark adagietto Quarter=67>
+<music21.note.Rest 16th>
+<music21.tempo.MetronomeMark Quarter=63>
+<music21.note.Rest quarter>
+<music21.tempo.MetronomeMark larghetto Quarter=62>
+<music21.note.Rest eighth>
+<music21.tempo.MetronomeMark adagietto Quarter=64>
+<music21.note.Rest dotted-quarter>
+<music21.tempo.MetronomeMark Quarter=63>
+<music21.note.Rest quarter>
+<music21.tempo.MetronomeMark adagietto Quarter=64>
+<music21.note.Rest dotted-quarter>
+<music21.tempo.MetronomeMark larghetto Quarter=61>
+<music21.note.Rest 16th>
+<music21.tempo.MetronomeMark adagietto Quarter=67>
+<music21.note.Rest 16th>
+<music21.tempo.MetronomeMark adagietto Quarter=64>
+<music21.note.Rest quarter>
+<music21.tempo.MetronomeMark larghetto Quarter=61>
+<music21.note.Rest eighth>
+<music21.tempo.MetronomeMark adagietto Quarter=64>
+<music21.note.Rest half>
+<music21.tempo.MetronomeMark larghetto Quarter=62>
+<music21.note.Rest eighth>
+<music21.tempo.MetronomeMark adagietto Quarter=64>
+<music21.note.Rest quarter>
+<music21.note.Rest dotted-eighth>
+<music21.tempo.MetronomeMark Quarter=69>
+<music21.note.Rest 16th>
+<music21.tempo.MetronomeMark Quarter=63>
+<music21.note.Rest quarter>
+<music21.tempo.MetronomeMark larghetto Quarter=62>
+<music21.note.Rest eighth>
+<music21.tempo.MetronomeMark Quarter=63>
+<music21.note.Rest quarter>
+<music21.tempo.MetronomeMark adagietto Quarter=66>
+<music21.note.Rest eighth>
+<music21.tempo.MetronomeMark Quarter=63>
+<music21.note.Rest dotted-quarter>
+<music21.tempo.MetronomeMark larghetto Quarter=62>
+<music21.note.Rest eighth>
+<music21.tempo.MetronomeMark Quarter=63>
+<music21.note.Rest dotted-eighth>
+<music21.tempo.MetronomeMark adagietto Quarter=67>
+<music21.note.Rest 16th>
+<music21.tempo.MetronomeMark adagietto Quarter=64>
+<music21.note.Rest quarter>
+<music21.tempo.MetronomeMark larghetto Quarter=62>
+<music21.note.Rest eighth>
+<music21.tempo.MetronomeMark Quarter=63>
+<music21.note.Rest quarter>
+<music21.tempo.MetronomeMark adagietto Quarter=66>
+<music21.note.Rest eighth>
+<music21.tempo.MetronomeMark larghetto Quarter=61>
+<music21.note.Rest eighth>
+<music21.tempo.MetronomeMark Quarter=63>
+<music21.note.Rest quarter>
+<music21.tempo.MetronomeMark adagietto Quarter=66>
+<music21.note.Rest 16th>
+<music21.tempo.MetronomeMark larghetto Quarter=62>
+<music21.note.Rest 16th>
+<music21.tempo.MetronomeMark Quarter=63>
+<music21.note.Rest 2.75ql>
+<music21.tempo.MetronomeMark adagietto Quarter=67>
+<music21.note.Rest 16th>
+<music21.tempo.MetronomeMark Quarter=63>
+<music21.note.Rest dotted-eighth>
+<music21.tempo.MetronomeMark adagietto Quarter=64>
+<music21.note.Rest 16th>
+<music21.tempo.MetronomeMark larghetto Quarter=61>
+<music21.note.Rest eighth>
+<music21.tempo.MetronomeMark adagietto Quarter=64>
+<music21.note.Rest eighth>
+<music21.tempo.MetronomeMark adagietto Quarter=66>
+<music21.note.Rest eighth>
+<music21.tempo.MetronomeMark adagietto Quarter=65>
+<music21.note.Rest 16th>
+<music21.tempo.MetronomeMark adagietto Quarter=64>
+<music21.note.Rest 16th>
+<music21.tempo.MetronomeMark adagietto Quarter=66>
+<music21.note.Rest 16th>
+<music21.tempo.MetronomeMark adagietto Quarter=65>
+<music21.note.Rest eighth>
+<music21.tempo.MetronomeMark adagietto Quarter=64>
+<music21.note.Rest dotted-eighth>
+<music21.tempo.MetronomeMark Quarter=63>
+<music21.note.Rest eighth>
+<music21.tempo.MetronomeMark adagietto Quarter=64>
+<music21.note.Rest dotted-eighth>
+<music21.tempo.MetronomeMark adagietto Quarter=67>
+<music21.note.Rest 16th>
+<music21.tempo.MetronomeMark adagietto Quarter=64>
+<music21.note.Rest dotted-eighth>
+<music21.tempo.MetronomeMark adagietto Quarter=67>
+<music21.note.Rest 16th>
+<music21.tempo.MetronomeMark adagietto Quarter=64>
+<music21.note.Rest quarter>
+<music21.tempo.MetronomeMark larghetto Quarter=61>
+<music21.note.Rest eighth>
+<music21.tempo.MetronomeMark adagietto Quarter=64>
+<music21.note.Rest eighth>
+<music21.note.Rest eighth>
+<music21.tempo.MetronomeMark larghetto Quarter=62>
+<music21.note.Rest eighth>
+<music21.tempo.MetronomeMark Quarter=63>
+<music21.note.Rest 1.75ql>
+<music21.tempo.MetronomeMark adagietto Quarter=67>
+<music21.note.Rest 16th>
+<music21.tempo.MetronomeMark adagietto Quarter=64>
+<music21.note.Rest quarter>
+<music21.tempo.MetronomeMark larghetto Quarter=61>
+<music21.note.Rest eighth>
+<music21.tempo.MetronomeMark adagietto Quarter=64>
+<music21.note.Rest half>
+<music21.tempo.MetronomeMark larghetto Quarter=60>
+<music21.note.Rest eighth>
+<music21.tempo.MetronomeMark adagio Quarter=57>
+<music21.note.Rest quarter>
+<music21.tempo.MetronomeMark larghetto Quarter=62>
+<music21.note.Rest dotted-quarter>
+<music21.tempo.MetronomeMark larghetto Quarter=60>
+<music21.note.Rest eighth>
+<music21.tempo.MetronomeMark Quarter=63>
+<music21.note.Rest dotted-eighth>
+<music21.tempo.MetronomeMark adagietto Quarter=66>
+<music21.note.Rest 16th>
+<music21.tempo.MetronomeMark Quarter=63>
+<music21.note.Rest quarter>
+<music21.tempo.MetronomeMark larghetto Quarter=61>
+<music21.note.Rest eighth>
+<music21.tempo.MetronomeMark Quarter=63>
+<music21.note.Rest dotted-eighth>
+<music21.tempo.MetronomeMark adagietto Quarter=65>
+<music21.note.Rest eighth>
+<music21.tempo.MetronomeMark larghetto Quarter=61>
+<music21.note.Rest 16th>
+<music21.tempo.MetronomeMark Quarter=63>
+<music21.note.Rest dotted-quarter>
+<music21.tempo.MetronomeMark larghetto Quarter=61>
+<music21.note.Rest eighth>
+<music21.tempo.MetronomeMark Quarter=63>
+<music21.note.Rest dotted-eighth>
+<music21.tempo.MetronomeMark adagietto Quarter=66>
+<music21.note.Rest 16th>
+<music21.tempo.MetronomeMark larghetto Quarter=61>
+<music21.note.Rest eighth>
+<music21.tempo.MetronomeMark Quarter=63>
+<music21.note.Rest 1.25ql>
+<music21.tempo.MetronomeMark larghetto Quarter=60>
+<music21.note.Rest 16th>
+<music21.tempo.MetronomeMark Quarter=63>
+<music21.note.Rest dotted-eighth>
+<music21.tempo.MetronomeMark adagietto Quarter=65>
+<music21.note.Rest 16th>
+<music21.tempo.MetronomeMark larghetto Quarter=61>
+<music21.note.Rest eighth>
+<music21.tempo.MetronomeMark Quarter=63>
+<music21.note.Rest half>
+<music21.tempo.MetronomeMark adagietto Quarter=66>
+<music21.note.Rest eighth>
+<music21.tempo.MetronomeMark Quarter=63>
+<music21.note.Rest quarter>
+<music21.tempo.MetronomeMark larghetto Quarter=61>
+<music21.note.Rest quarter>
+<music21.tempo.MetronomeMark Quarter=63>
+<music21.note.Rest eighth>
+<music21.tempo.MetronomeMark adagietto Quarter=65>
+<music21.note.Rest eighth>
+<music21.tempo.MetronomeMark Quarter=63>
+<music21.note.Rest dotted-quarter>
+<music21.tempo.MetronomeMark larghetto Quarter=60>
+<music21.note.Rest eighth>
+<music21.tempo.MetronomeMark Quarter=63>
+<music21.note.Rest dotted-eighth>
+<music21.tempo.MetronomeMark larghetto Quarter=60>
+<music21.note.Rest 2.25ql>
+<music21.tempo.MetronomeMark Quarter=63>
+<music21.note.Rest quarter>
+<music21.note.Rest 1.25ql>
+<music21.tempo.MetronomeMark adagio Quarter=58>
+<music21.note.Rest 16th>
+<music21.tempo.MetronomeMark larghetto Quarter=62>
+<music21.note.Rest quarter>
+<music21.tempo.MetronomeMark adagietto Quarter=64>
+<music21.note.Rest eighth>
+<music21.tempo.MetronomeMark Quarter=63>
+<music21.note.Rest quarter>
+<music21.note.Rest dotted-eighth>
+<music21.tempo.MetronomeMark larghetto Quarter=60>
+<music21.note.Rest 16th>
+<music21.tempo.MetronomeMark Quarter=63>
+<music21.note.Rest quarter>
+<music21.tempo.MetronomeMark larghetto Quarter=60>
+<music21.note.Rest eighth>
+<music21.tempo.MetronomeMark Quarter=63>
+<music21.note.Rest dotted-quarter>
+<music21.note.Rest eighth>
+<music21.tempo.MetronomeMark adagietto Quarter=65>
+<music21.note.Rest eighth>
+<music21.tempo.MetronomeMark Quarter=63>
+<music21.note.Rest eighth>
+<music21.tempo.MetronomeMark larghetto Quarter=61>
+<music21.note.Rest half>
+<music21.tempo.MetronomeMark Quarter=63>
+<music21.note.Rest eighth>
+<music21.tempo.MetronomeMark larghetto Quarter=61>
+<music21.note.Rest half>
+<music21.tempo.MetronomeMark larghetto Quarter=59>
+<music21.note.Rest eighth>
+<music21.tempo.MetronomeMark lento Quarter=54>
+<music21.note.Rest dotted-quarter>
+<music21.tempo.MetronomeMark adagio Quarter=57>
+<music21.note.Rest 2.5ql>
+<music21.tempo.MetronomeMark larghetto Quarter=60>
+<music21.note.Rest 16th>
+<music21.tempo.MetronomeMark lento Quarter=54>
+<music21.note.Rest 16th>
+<music21.tempo.MetronomeMark adagio Quarter=57>
+<music21.note.Rest quarter>
+<music21.note.Rest eighth>
+<music21.tempo.MetronomeMark larghetto Quarter=60>
+<music21.note.Rest 16th>
+<music21.tempo.MetronomeMark lento Quarter=54>
+<music21.note.Rest 16th>
+<music21.tempo.MetronomeMark adagio Quarter=57>
+<music21.note.Rest 1.25ql>
+<music21.tempo.MetronomeMark adagio Quarter=55>
+<music21.note.Rest 1.75ql>
+<music21.note.Rest 2/3ql>
+<music21.tempo.MetronomeMark lento Quarter=54>
+<music21.note.Rest 2/3ql>
+<music21.tempo.MetronomeMark lento Quarter=53>
+<music21.note.Rest 2/3ql>
+<music21.tempo.MetronomeMark lento Quarter=52>
+<music21.note.Rest 16th>
+<music21.tempo.MetronomeMark adagio Quarter=56>
+<music21.note.Rest 16th>
+<music21.tempo.MetronomeMark lento Quarter=52>
+<music21.note.Rest 1.25ql>
+<music21.tempo.MetronomeMark adagio Quarter=55>
+<music21.note.Rest 16th>
+<music21.tempo.MetronomeMark lento Quarter=52>
+<music21.note.Rest quarter>
+<music21.tempo.MetronomeMark largo Quarter=45>
+<music21.note.Rest 16th>
+<music21.tempo.MetronomeMark grave Quarter=38>
+<music21.note.Rest eighth>
+<music21.tempo.MetronomeMark Quarter=27>
+<music21.note.Rest 2.25ql>
+<music21.bar.Barline type=final>
+Piano, Piano right: Piano, Piano right
+<music21.clef.BassClef>
+C major
+<music21.meter.TimeSignature 4/4>
+<music21.note.Note C>
+<music21.note.Note E>
+<music21.note.Note C>
+<music21.note.Note E>
+<music21.note.Note C>
+<music21.note.Note D>
+<music21.note.Note C>
+<music21.note.Note D>
+<music21.note.Note B>
+<music21.note.Note D>
+<music21.note.Note B>
+<music21.note.Note D>
+<music21.note.Note C>
+<music21.note.Note E>
+<music21.note.Note C>
+<music21.note.Note E>
+<music21.note.Note C>
+<music21.note.Note E>
+<music21.note.Note C>
+<music21.note.Note E>
+<music21.note.Note C>
+<music21.note.Note D>
+<music21.note.Note C>
+<music21.note.Note D>
+<music21.note.Note B>
+<music21.note.Note D>
+<music21.note.Note B>
+<music21.note.Note D>
+<music21.note.Note B>
+<music21.note.Note C>
+<music21.note.Note B>
+<music21.note.Note C>
+<music21.note.Note A>
+<music21.note.Note C>
+<music21.note.Note A>
+<music21.note.Note C>
+<music21.note.Note D>
+<music21.note.Note A>
+<music21.note.Note D>
+<music21.note.Note A>
+<music21.note.Note G>
+<music21.note.Note B>
+<music21.note.Note G>
+<music21.note.Note B>
+<music21.note.Note G>
+<music21.note.Note B->
+<music21.note.Note G>
+<music21.note.Note B->
+<music21.note.Note F>
+<music21.note.Note A>
+<music21.note.Note F>
+<music21.note.Note A>
+<music21.note.Note F>
+<music21.note.Note G#>
+<music21.note.Note F>
+<music21.note.Note G#>
+<music21.note.Note E>
+<music21.note.Note G>
+<music21.note.Note E>
+<music21.note.Note G>
+<music21.note.Note E>
+<music21.note.Note F>
+<music21.note.Note E>
+<music21.note.Note F>
+<music21.note.Note D>
+<music21.note.Note F>
+<music21.note.Note D>
+<music21.note.Note F>
+<music21.note.Note G>
+<music21.note.Note D>
+<music21.note.Note G>
+<music21.note.Note D>
+<music21.note.Note C>
+<music21.note.Note E>
+<music21.note.Note C>
+<music21.note.Note E>
+<music21.note.Note C>
+<music21.note.Note G>
+<music21.note.Note C>
+<music21.note.Note G>
+<music21.note.Note F>
+<music21.note.Note F>
+<music21.note.Note F>
+<music21.note.Note F>
+<music21.note.Note F#>
+<music21.note.Note C>
+<music21.note.Note F#>
+<music21.note.Note C>
+<music21.note.Note G#>
+<music21.note.Note F>
+<music21.note.Note G#>
+<music21.note.Note F>
+<music21.note.Note G>
+<music21.note.Note F>
+<music21.note.Note G>
+<music21.note.Note F>
+<music21.note.Note G>
+<music21.note.Note E>
+<music21.note.Note G>
+<music21.note.Note E>
+<music21.note.Note G>
+<music21.note.Note D>
+<music21.note.Note G>
+<music21.note.Note D>
+<music21.note.Note G>
+<music21.note.Note D>
+<music21.note.Note G>
+<music21.note.Note D>
+<music21.note.Note G>
+<music21.note.Note E->
+<music21.note.Note G>
+<music21.note.Note E->
+<music21.note.Note G>
+<music21.note.Note E>
+<music21.note.Note G>
+<music21.note.Note E>
+<music21.note.Note G>
+<music21.note.Note D>
+<music21.note.Note G>
+<music21.note.Note D>
+<music21.note.Note G>
+<music21.note.Note D>
+<music21.note.Note G>
+<music21.note.Note D>
+<music21.note.Note C>
+<music21.note.Note C>
+<music21.note.Note C>
+<music21.note.Note C>
+<music21.note.Note C>
+<music21.note.Note C>
+<music21.note.Rest 16th>
+<music21.note.Note C>
+<music21.note.Note D>
+<music21.note.Rest 16th>
+<music21.chord.Chord C2 C3>
+<music21.note.Rest 1.25ql>
+<music21.bar.Barline type=final>
