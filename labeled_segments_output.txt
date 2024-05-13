@@ -1,6 +1,6 @@
 Number of segments: 47
 
-bach_846 Segment 1:
+bach_846 Segment 1 (red):
    onset_beats duration_beats  midi_pitch
 0          0.0            0.5         0.0
 1          0.5           0.25        67.0
@@ -22,7 +22,7 @@ bach_846 Segment 1:
 17         5.0           0.25        77.0
 --------------------------------------------
 
-bach_846 Segment 2:
+bach_846 Segment 2 (red):
    onset_beats duration_beats  midi_pitch
 18        5.25           0.25        69.0
 19         5.5           0.25        74.0
@@ -36,7 +36,7 @@ bach_846 Segment 2:
 27        7.75           0.25        77.0
 --------------------------------------------
 
-bach_846 Segment 3:
+bach_846 Segment 3 (red):
    onset_beats duration_beats  midi_pitch
 28         8.0            0.5         0.0
 29         8.5           0.25        67.0
@@ -54,7 +54,7 @@ bach_846 Segment 3:
 41       11.75           0.25        77.0
 --------------------------------------------
 
-bach_846 Segment 4:
+bach_846 Segment 4 (red):
    onset_beats duration_beats  midi_pitch
 42        12.0            0.5         0.0
 43        12.5           0.25        67.0
@@ -76,7 +76,7 @@ bach_846 Segment 4:
 59        17.0           0.25        81.0
 --------------------------------------------
 
-bach_846 Segment 5:
+bach_846 Segment 5 (red):
    onset_beats duration_beats  midi_pitch
 60       17.25           0.25        69.0
 61        17.5           0.25        76.0
@@ -90,7 +90,7 @@ bach_846 Segment 5:
 69       19.75           0.25        81.0
 --------------------------------------------
 
-bach_846 Segment 6:
+bach_846 Segment 6 (red):
    onset_beats duration_beats  midi_pitch
 70        20.0            0.5         0.0
 71        20.5           0.25        66.0
@@ -122,7 +122,7 @@ bach_846 Segment 6:
 97       27.75           0.25        79.0
 --------------------------------------------
 
-bach_846 Segment 7:
+bach_846 Segment 7 (red):
     onset_beats duration_beats  midi_pitch
 98         28.0            0.5         0.0
 99         28.5           0.25        64.0
@@ -153,7 +153,7 @@ bach_846 Segment 7:
 124        35.5           0.25        67.0
 --------------------------------------------
 
-bach_846 Segment 8:
+bach_846 Segment 8 (red):
     onset_beats duration_beats  midi_pitch
 125       35.75           0.25        72.0
 126        36.0            0.5         0.0
@@ -199,7 +199,7 @@ bach_846 Segment 8:
 166        47.5           0.25        67.0
 --------------------------------------------
 
-bach_846 Segment 9:
+bach_846 Segment 9 (red):
     onset_beats duration_beats  midi_pitch
 167       47.75           0.25        73.0
 168        48.0           0.25         0.0
@@ -209,7 +209,7 @@ bach_846 Segment 9:
 172        49.0           0.25        74.0
 --------------------------------------------
 
-bach_846 Segment 10:
+bach_846 Segment 10 (red):
     onset_beats duration_beats  midi_pitch
 173       49.25           0.25        62.0
 174        49.5           0.25        69.0
@@ -223,7 +223,7 @@ bach_846 Segment 10:
 182       51.75           0.25        74.0
 --------------------------------------------
 
-bach_846 Segment 11:
+bach_846 Segment 11 (red):
     onset_beats duration_beats  midi_pitch
 183        52.0            0.5         0.0
 184        52.5           0.25        62.0
@@ -255,7 +255,7 @@ bach_846 Segment 11:
 210       59.75           0.25        72.0
 --------------------------------------------
 
-bach_846 Segment 12:
+bach_846 Segment 12 (red):
     onset_beats duration_beats  midi_pitch
 211        60.0            0.5         0.0
 212        60.5           0.25        57.0
@@ -286,7 +286,7 @@ bach_846 Segment 12:
 237        67.5           0.25        60.0
 --------------------------------------------
 
-bach_846 Segment 13:
+bach_846 Segment 13 (red):
     onset_beats duration_beats  midi_pitch
 238       67.75           0.25        65.0
 239        68.0            0.5         0.0
@@ -319,7 +319,7 @@ bach_846 Segment 13:
 266       75.75           0.25        64.0
 --------------------------------------------
 
-bach_846 Segment 14:
+bach_846 Segment 14 (red):
     onset_beats duration_beats  midi_pitch
 267        76.0            0.5         0.0
 268        76.5           0.25        58.0
@@ -336,7 +336,7 @@ bach_846 Segment 14:
 279        79.5           0.25        60.0
 --------------------------------------------
 
-bach_846 Segment 15:
+bach_846 Segment 15 (red):
     onset_beats duration_beats  midi_pitch
 280       79.75           0.25        64.0
 281        80.0            0.5         0.0
@@ -353,7 +353,7 @@ bach_846 Segment 15:
 [61 rows x 3 columns]
 --------------------------------------------
 
-bach_846 Segment 16:
+bach_846 Segment 16 (red):
     onset_beats duration_beats  midi_pitch
 341       97.25           0.25        55.0
 342        97.5           0.25        60.0
@@ -367,7 +367,7 @@ bach_846 Segment 16:
 350       99.75           0.25        64.0
 --------------------------------------------
 
-bach_846 Segment 17:
+bach_846 Segment 17 (red):
     onset_beats duration_beats  midi_pitch
 351       100.0            0.5         0.0
 352       100.5           0.25        55.0
@@ -403,7 +403,7 @@ bach_846 Segment 17:
 382      108.75           0.25        60.0
 --------------------------------------------
 
-bach_846 Segment 18:
+bach_846 Segment 18 (red):
     onset_beats duration_beats  midi_pitch
 383       109.0           0.25        66.0
 384      109.25           0.25        57.0
@@ -417,7 +417,7 @@ bach_846 Segment 18:
 392       111.5           0.25        60.0
 --------------------------------------------
 
-bach_846 Segment 19:
+bach_846 Segment 19 (red):
     onset_beats duration_beats  midi_pitch
 393      111.75           0.25        66.0
 394       112.0            0.5         0.0
@@ -442,7 +442,7 @@ bach_846 Segment 19:
 413       117.5           0.25        60.0
 --------------------------------------------
 
-bach_846 Segment 20:
+bach_846 Segment 20 (red):
     onset_beats duration_beats  midi_pitch
 414      117.75           0.25        65.0
 415       118.0            0.5         0.0
@@ -461,7 +461,7 @@ bach_846 Segment 20:
 428       121.5           0.25        59.0
 --------------------------------------------
 
-bach_846 Segment 21:
+bach_846 Segment 21 (red):
     onset_beats duration_beats  midi_pitch
 429      121.75           0.25        65.0
 430       122.0           0.25         0.0
@@ -470,7 +470,7 @@ bach_846 Segment 21:
 433      122.75           0.25        59.0
 --------------------------------------------
 
-bach_846 Segment 22:
+bach_846 Segment 22 (red):
     onset_beats duration_beats  midi_pitch
 434       123.0           0.25        65.0
 435      123.25           0.25        55.0
@@ -525,7 +525,7 @@ bach_846 Segment 22:
 484       140.0            2.0         0.0
 --------------------------------------------
 
-bach_846 Segment 23:
+bach_846 Segment 23 (red):
     onset_beats duration_beats  midi_pitch
 485       142.0           0.75         0.0
 486      142.75           0.25         0.0
@@ -544,7 +544,7 @@ bach_846 Segment 23:
 499       153.0            1.5         0.0
 --------------------------------------------
 
-bach_846 Segment 24:
+bach_846 Segment 24 (red):
     onset_beats duration_beats  midi_pitch
 500       154.5           0.25         0.0
 501      154.75           0.25         0.0
@@ -562,7 +562,7 @@ bach_846 Segment 24:
 513       164.0            1.5         0.0
 --------------------------------------------
 
-bach_846 Segment 25:
+bach_846 Segment 25 (red):
     onset_beats duration_beats  midi_pitch
 514       165.5            0.5         0.0
 515       166.0           0.75         0.0
@@ -578,7 +578,7 @@ bach_846 Segment 25:
 525       172.0           2.75         0.0
 --------------------------------------------
 
-bach_846 Segment 26:
+bach_846 Segment 26 (red):
     onset_beats duration_beats  midi_pitch
 526      174.75           0.25         0.0
 527       175.0           0.75         0.0
@@ -611,7 +611,7 @@ bach_846 Segment 26:
 554       192.0            1.5         0.0
 --------------------------------------------
 
-bach_846 Segment 27:
+bach_846 Segment 27 (red):
     onset_beats duration_beats  midi_pitch
 555       193.5            0.5         0.0
 556       194.0           0.75         0.0
@@ -624,7 +624,7 @@ bach_846 Segment 27:
 563       198.0            1.5         0.0
 --------------------------------------------
 
-bach_846 Segment 28:
+bach_846 Segment 28 (red):
     onset_beats duration_beats  midi_pitch
 564       199.5            0.5         0.0
 565       200.0           0.75         0.0
@@ -647,7 +647,7 @@ bach_846 Segment 28:
 582      212.75           2.25         0.0
 --------------------------------------------
 
-bach_846 Segment 29:
+bach_846 Segment 29 (red):
     onset_beats duration_beats  midi_pitch
 583       215.0            1.0         0.0
 584       216.0           1.25         0.0
@@ -662,7 +662,7 @@ bach_846 Segment 29:
 593       222.5            1.5         0.0
 --------------------------------------------
 
-bach_846 Segment 30:
+bach_846 Segment 30 (red):
     onset_beats duration_beats  midi_pitch
 594       224.0            0.5         0.0
 595       224.5            0.5         0.0
@@ -675,7 +675,7 @@ bach_846 Segment 30:
 602       232.0            2.5         0.0
 --------------------------------------------
 
-bach_846 Segment 31:
+bach_846 Segment 31 (red):
     onset_beats duration_beats  midi_pitch
 603       234.5           0.25         0.0
 604      234.75           0.25         0.0
@@ -699,7 +699,7 @@ bach_846 Segment 31:
 622         0.0            2.0        60.0
 --------------------------------------------
 
-bach_846 Segment 32:
+bach_846 Segment 32 (red):
     onset_beats duration_beats  midi_pitch
 623        0.25           1.75        64.0
 624         2.0            2.0        60.0
@@ -708,7 +708,7 @@ bach_846 Segment 32:
 627        4.25           1.75        62.0
 --------------------------------------------
 
-bach_846 Segment 33:
+bach_846 Segment 33 (red):
     onset_beats duration_beats  midi_pitch
 628         6.0            2.0        60.0
 629        6.25           1.75        62.0
@@ -718,7 +718,7 @@ bach_846 Segment 33:
 633       10.25           1.75        62.0
 --------------------------------------------
 
-bach_846 Segment 34:
+bach_846 Segment 34 (red):
     onset_beats duration_beats  midi_pitch
 634        12.0            2.0        60.0
 635       12.25           1.75        64.0
@@ -740,7 +740,7 @@ bach_846 Segment 34:
 651       28.25           1.75        60.0
 --------------------------------------------
 
-bach_846 Segment 35:
+bach_846 Segment 35 (red):
     onset_beats duration_beats  midi_pitch
 652        30.0            2.0        59.0
 653       30.25           1.75        60.0
@@ -750,7 +750,7 @@ bach_846 Segment 35:
 657       34.25           1.75        60.0
 --------------------------------------------
 
-bach_846 Segment 36:
+bach_846 Segment 36 (red):
     onset_beats duration_beats  midi_pitch
 658        36.0            2.0        50.0
 659       36.25           1.75        57.0
@@ -760,7 +760,7 @@ bach_846 Segment 36:
 663       40.25           1.75        59.0
 --------------------------------------------
 
-bach_846 Segment 37:
+bach_846 Segment 37 (red):
     onset_beats duration_beats  midi_pitch
 664        42.0            2.0        55.0
 665       42.25           1.75        59.0
@@ -770,7 +770,7 @@ bach_846 Segment 37:
 669       46.25           1.75        58.0
 --------------------------------------------
 
-bach_846 Segment 38:
+bach_846 Segment 38 (red):
     onset_beats duration_beats  midi_pitch
 670        48.0            2.0        53.0
 671       48.25           1.75        57.0
@@ -782,7 +782,7 @@ bach_846 Segment 38:
 677       54.25           1.75        56.0
 --------------------------------------------
 
-bach_846 Segment 39:
+bach_846 Segment 39 (red):
     onset_beats duration_beats  midi_pitch
 678        56.0            2.0        52.0
 679       56.25           1.75        55.0
@@ -792,7 +792,7 @@ bach_846 Segment 39:
 683       60.25           1.75        53.0
 --------------------------------------------
 
-bach_846 Segment 40:
+bach_846 Segment 40 (red):
     onset_beats duration_beats  midi_pitch
 684        62.0            2.0        52.0
 685       62.25           1.75        53.0
@@ -802,7 +802,7 @@ bach_846 Segment 40:
 689       66.25           1.75        53.0
 --------------------------------------------
 
-bach_846 Segment 41:
+bach_846 Segment 41 (red):
     onset_beats duration_beats  midi_pitch
 690        68.0            2.0        43.0
 691       68.25           1.75        50.0
@@ -812,7 +812,7 @@ bach_846 Segment 41:
 695       72.25           1.75        52.0
 --------------------------------------------
 
-bach_846 Segment 42:
+bach_846 Segment 42 (red):
     onset_beats duration_beats  midi_pitch
 696        74.0            2.0        48.0
 697       74.25           1.75        52.0
@@ -822,7 +822,7 @@ bach_846 Segment 42:
 701       78.25           1.75        55.0
 --------------------------------------------
 
-bach_846 Segment 43:
+bach_846 Segment 43 (red):
     onset_beats duration_beats  midi_pitch
 702        80.0            2.0        41.0
 703       80.25           1.75        53.0
@@ -834,7 +834,7 @@ bach_846 Segment 43:
 709       86.25           1.75        48.0
 --------------------------------------------
 
-bach_846 Segment 44:
+bach_846 Segment 44 (red):
     onset_beats duration_beats  midi_pitch
 710        88.0            2.0        44.0
 711       88.25           1.75        53.0
@@ -852,7 +852,7 @@ bach_846 Segment 44:
 723      100.25           1.75        50.0
 --------------------------------------------
 
-bach_846 Segment 45:
+bach_846 Segment 45 (red):
     onset_beats duration_beats  midi_pitch
 724       102.0            2.0        43.0
 725      102.25           1.75        50.0
@@ -872,7 +872,7 @@ bach_846 Segment 45:
 739      116.25           1.75        50.0
 --------------------------------------------
 
-bach_846 Segment 46:
+bach_846 Segment 46 (red):
     onset_beats duration_beats  midi_pitch
 740       118.0            2.0        43.0
 741      118.25           1.75        50.0
@@ -882,7 +882,7 @@ bach_846 Segment 46:
 745      122.25           1.75        50.0
 --------------------------------------------
 
-bach_846 Segment 47:
+bach_846 Segment 47 (red):
     onset_beats duration_beats  midi_pitch
 746       124.0            2.0        36.0
 747      124.25           1.75        48.0
