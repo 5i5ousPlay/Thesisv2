@@ -1,4 +1,3 @@
-# midi to score array function (contains all data needed for score visualization)
 from multiprocessing import cpu_count, Manager, Pool
 from sklearn.neighbors import kneighbors_graph
 import worker
@@ -13,6 +12,15 @@ from pyvis.network import Network
 
 
 def extract_score_elements(score):
+    """
+    Extracts elements from a music21 score object and organizes them into a DataFrame.
+
+    Parameters:
+    score (music21.stream.Score): The music21 score object to extract elements from.
+
+    Returns:
+    pd.DataFrame: A DataFrame containing part index, offset, duration, type, and pitch information for each element.
+    """
     elements = []
 
     for part_index, part in enumerate(score.parts):
@@ -43,6 +51,15 @@ def extract_score_elements(score):
 
 
 def recreate_score(elements_df):
+    """
+    Recreates a music21 score object from a DataFrame of score elements.
+
+    Parameters:
+    elements_df (pd.DataFrame): A DataFrame containing part index, offset, duration, type, and pitch information for each element.
+
+    Returns:
+    music21.stream.Score: The recreated music21 score object.
+    """
     score = stream.Score()
     parts_dict = {}
 
@@ -77,6 +94,18 @@ def recreate_score(elements_df):
 
 
 def parse_score_elements(score):
+    """
+    Parses a music21 score object into a DataFrame of note attributes and a list of note and chord elements.
+
+    Parameters:
+    score (music21.stream.Score): The music21 score object to parse.
+
+    Returns:
+    tuple: A tuple containing:
+        - pd.DataFrame: A DataFrame with onset, duration, and pitch for each note.
+        - list: A list of note and chord elements.
+        - list: A placeholder list for additional elements (currently empty).
+    """
     trashed_elements = 0
     narr = []
     sarr = []
@@ -103,38 +132,37 @@ def parse_score_elements(score):
     return nmat, narr, sarr
 
 
-# IR symbol calculation function
 def calculate_ir_symbol(interval1, interval2, threshold=5):
+    """
+    Calculates the IR (Intervallic Relationship) symbol based on the intervals between notes.
+
+    Parameters:
+    interval1 (int): The interval between the first and second notes.
+    interval2 (int): The interval between the second and third notes.
+    threshold (int): The threshold value for determining the type of relationship.
+
+    Returns:
+    str: The IR symbol representing the relationship between the intervals.
+    """
     direction = interval1 * interval2
     abs_difference = abs(interval2 - interval1)
 
-    # Process
-    if direction > 0 and (abs(interval2 - interval1)) < threshold:
-        return 'P'
-    # IR2: D (Duplication)
+    if direction > 0 and abs_difference < threshold:
+        return 'P'  # Process
     elif interval1 == interval2 == 0:
-        return 'D'
-    # IR3: IP (Intervallic Process)
-    elif ((interval1 * interval2) < 0) and (-threshold <= (abs(interval2) - abs(interval1)) <= threshold) and (
-            abs(interval2) != abs(interval1)):
-        return 'IP'
-    # IR4: ID (Intervallic Duplication)
-    elif ((interval1 * interval2) < 0) and (abs(interval2) == abs(interval1)):
-        return 'ID'
-    # IR5: VP (Vector Process)
-    elif (interval1 * interval2 > 0) and (abs(interval2 - interval1) >= threshold) and (abs(interval1) <= threshold):
-        return 'VP'
-    # IR6: R (Reversal)
-    elif (interval1 * interval2 < 0) and (abs(abs(interval2) - abs(interval1)) >= threshold) and (
-            abs(interval1) >= threshold):
-        return 'R'
-    # IR7: IR (Intervallic Reversal)
-    elif (interval1 * interval2 > 0) and (abs(abs(interval2) - abs(interval1)) >= threshold) and (
-            abs(interval1) >= threshold):
-        return 'IR'
-    # IR8: VR (Vector Reversal)
-    elif (interval1 * interval2 < 0) and (abs(interval2 - interval1) >= threshold) and (abs(interval1) <= threshold):
-        return 'VR'
+        return 'D'  # Duplication
+    elif (interval1 * interval2 < 0) and (-threshold <= abs(abs_difference) <= threshold) and (abs(interval2) != abs(interval1)):
+        return 'IP'  # Intervallic Process
+    elif (interval1 * interval2 < 0) and (abs(interval2) == abs(interval1)):
+        return 'ID'  # Intervallic Duplication
+    elif (interval1 * interval2 > 0) and (abs_difference >= threshold) and (abs(interval1) <= threshold):
+        return 'VP'  # Vector Process
+    elif (interval1 * interval2 < 0) and (abs(abs_difference) >= threshold) and (abs(interval1) >= threshold):
+        return 'R'  # Reversal
+    elif (interval1 * interval2 > 0) and (abs(abs_difference) >= threshold) and (abs(interval1) >= threshold):
+        return 'IR'  # Intervallic Reversal
+    elif (interval1 * interval2 < 0) and (abs_difference >= threshold) and (abs(interval1) <= threshold):
+        return 'VR'  # Vector Reversal
     elif interval2 == 0 and not (interval1 < -5 or interval1 > 5):
         return 'IP'
     elif interval2 == 0 and (interval1 < -5 or interval1 > 5):
@@ -145,8 +173,16 @@ def calculate_ir_symbol(interval1, interval2, threshold=5):
         return 'VR'
 
 
-# assign IR symbol function (original; modified)
 def assign_ir_symbols(score_array):
+    """
+    Assigns IR symbols and colors to each element in the score array.
+
+    Parameters:
+    score_array (list): A list of music21 note and chord elements.
+
+    Returns:
+    list: A list of tuples containing each element, its IR symbol, and its color.
+    """
     symbols = []
     current_group = []
     group_pitches = []
@@ -170,11 +206,11 @@ def assign_ir_symbols(score_array):
             interval2 = group_pitches[2] - group_pitches[1]
             symbol = calculate_ir_symbol(interval1, interval2)
             color = color_map.get(symbol, 'black')  # Default to black if symbol is not predefined
-            symbols.extend((note, symbol, color) for note in current_group)
+            symbols.extend([(note, symbol, color) for note in current_group])
         elif len(current_group) == 2:
-            symbols.extend((note, 'd', color_map['d']) for note in current_group)  # Dyad
+            symbols.extend([(note, 'd', color_map['d']) for note in current_group])  # Dyad
         elif len(current_group) == 1:
-            symbols.extend((note, 'M', color_map['M']) for note in current_group)  # Monad
+            symbols.extend([(note, 'M', color_map['M']) for note in current_group])  # Monad
         current_group.clear()
         group_pitches.clear()
 
@@ -204,12 +240,19 @@ def assign_ir_symbols(score_array):
     return symbols
 
 
-# Score visualization function
 def visualize_notes_with_symbols(notes_with_symbols):
+    """
+    Visualizes notes with their assigned IR symbols and colors in a music21 score.
+
+    Parameters:
+    notes_with_symbols (list): A list of tuples containing each note, its IR symbol, and its color.
+
+    Returns:
+    None
+    """
     s = stream.Score()
     part = stream.Part()
     for note, symbol, color in notes_with_symbols:
-        print(note, symbol, color)
         note.style.color = color
         note.lyric = symbol
         part.append(note)
@@ -218,12 +261,31 @@ def visualize_notes_with_symbols(notes_with_symbols):
 
 
 def ir_symbols_to_matrix(note_array, note_matrix):
+    """
+    Assigns IR symbols to the note matrix based on the note array.
+
+    Parameters:
+    note_array (list): A list of tuples containing note data, IR symbols, and colors.
+    note_matrix (pd.DataFrame): A DataFrame containing note attributes.
+
+    Returns:
+    pd.DataFrame: The updated DataFrame with assigned IR symbols.
+    """
     for pointer, (note_data, ir_symbol, color) in enumerate(note_array):
         note_matrix.at[pointer, 'ir_symbol'] = ir_symbol
     return note_matrix
 
 
 def assign_ir_pattern_indices(notematrix):
+    """
+    Assigns pattern indices to the note matrix based on IR symbols.
+
+    Parameters:
+    notematrix (pd.DataFrame): A DataFrame containing note attributes and IR symbols.
+
+    Returns:
+    pd.DataFrame: The updated DataFrame with assigned pattern indices.
+    """
     pattern_index = 0
     indices = []
     i = 0
@@ -243,23 +305,52 @@ def assign_ir_pattern_indices(notematrix):
     return notematrix
 
 
-# onset function
 def get_onset(notematrix: pd.DataFrame, timetype='beat'):
+    """
+    Retrieves the onset times from the note matrix.
+
+    Parameters:
+    notematrix (pd.DataFrame): A DataFrame containing note attributes.
+    timetype (str): The type of time to retrieve (default is 'beat').
+
+    Returns:
+    pd.Series: A series containing the onset times.
+    """
     if timetype == 'beat':
         return notematrix['onset_beats']
     else:
-        ValueError(f"Invalid timetype: {timetype}")
+        raise ValueError(f"Invalid timetype: {timetype}")
 
 
 def get_duration(notematrix: pd.DataFrame, timetype='beat') -> pd.Series:
+    """
+    Retrieves the duration times from the note matrix.
+
+    Parameters:
+    notematrix (pd.DataFrame): A DataFrame containing note attributes.
+    timetype (str): The type of time to retrieve (default is 'beat').
+
+    Returns:
+    pd.Series: A series containing the duration times.
+    """
     if timetype == 'beat':
         return notematrix['duration_beats']
     else:
-        ValueError(f"Invalid timetype: {timetype}")
+        raise ValueError(f"Invalid timetype: {timetype}")
 
 
-# Calculate Clang Boundaries Function
 def calculate_clang_boundaries(notematrix: pd.DataFrame):
+    """
+    Calculates clang boundaries based on note matrix attributes.
+
+    Parameters:
+    notematrix (pd.DataFrame): A DataFrame containing note attributes.
+
+    Returns:
+    tuple: A tuple containing:
+        - list: A list of indices representing clang boundaries.
+        - pd.Series: A series indicating clang boundaries with boolean values.
+    """
     cl = 2 * (get_onset(notematrix).diff().fillna(0) + get_duration(notematrix).shift(-1).fillna(0)) + abs(
         notematrix['midi_pitch'].diff().fillna(0))
     cl = cl.infer_objects()  # Ensure correct data types
@@ -269,11 +360,19 @@ def calculate_clang_boundaries(notematrix: pd.DataFrame):
 
 
 def calculate_segment_boundaries(notematrix, clind):
-    # Initialize first and last indices for segments
+    """
+    Calculates segment boundaries based on clang boundaries and note attributes.
+
+    Parameters:
+    notematrix (pd.DataFrame): A DataFrame containing note attributes.
+    clind (list): A list of clang boundary indices.
+
+    Returns:
+    pd.Series: A series indicating segment boundaries with boolean values.
+    """
     first = [0] + clind
     last = [i - 1 for i in clind] + [len(notematrix) - 1]
 
-    # Calculate mean pitch for each segment weighted by duration
     mean_pitch = []
     for i in range(len(first)):
         segment = notematrix.iloc[first[i]:last[i] + 1]
@@ -284,7 +383,6 @@ def calculate_segment_boundaries(notematrix, clind):
         else:
             mean_pitch.append(0)  # Avoid division by zero by assigning 0 if total_duration is 0
 
-    # Calculate segment distances
     segdist = []
     for i in range(1, len(first)):
         distance = (abs(mean_pitch[i] - mean_pitch[i - 1]) +
@@ -293,11 +391,9 @@ def calculate_segment_boundaries(notematrix, clind):
                     2 * (notematrix.iloc[first[i]]['onset_beats'] - notematrix.iloc[last[i - 1]]['onset_beats']))
         segdist.append(distance)
 
-    # Identify local maxima in segment distances and check pattern_index consistency
     segb = [(segdist[i] > segdist[i - 1] and segdist[i] > segdist[i + 1]) for i in range(1, len(segdist) - 1)]
     segind = [clind[i] for i in range(1, len(segdist) - 1) if segb[i - 1]]
 
-    # Create binary vector for segment boundaries
     s = pd.Series(0, index=range(len(notematrix)))
     s.iloc[segind] = 1
 
@@ -305,6 +401,16 @@ def calculate_segment_boundaries(notematrix, clind):
 
 
 def adjust_segment_boundaries(notematrix, s):
+    """
+    Adjusts segment boundaries to ensure IR patterns are not split.
+
+    Parameters:
+    notematrix (pd.DataFrame): A DataFrame containing note attributes and IR symbols.
+    s (pd.Series): A series indicating initial segment boundaries with boolean values.
+
+    Returns:
+    pd.Series: The adjusted series indicating segment boundaries.
+    """
     adjusted_s = s.copy()
     indices_with_ones = np.where(s == 1)[0].tolist()
     i = 0
@@ -315,18 +421,13 @@ def adjust_segment_boundaries(notematrix, s):
             ir_symbol = notematrix.iloc[i]['ir_symbol']
 
             if ir_symbol == 'M' or ir_symbol == 'rest':
-                # Skip monads and rests
                 i += 1
                 continue
-
             elif ir_symbol == 'd':
                 if 0 < i < len(notematrix) - 1:
-                    prev_index = indices_with_ones[indices_with_ones.index(i) - 1] if indices_with_ones.index(
-                        i) > 0 else 0
-                    next_index = indices_with_ones[indices_with_ones.index(i) + 1] if indices_with_ones.index(i) < len(
-                        indices_with_ones) - 1 else len(notematrix) - 1
+                    prev_index = indices_with_ones[indices_with_ones.index(i) - 1] if indices_with_ones.index(i) > 0 else 0
+                    next_index = indices_with_ones[indices_with_ones.index(i) + 1] if indices_with_ones.index(i) < len(indices_with_ones) - 1 else len(notematrix) - 1
 
-                    # Check the distances to previous and next indices with ones
                     if (i - prev_index) > (next_index - i):
                         adjusted_s.iloc[i] = 0
                         adjusted_s.iloc[i + 1] = 1
@@ -336,8 +437,7 @@ def adjust_segment_boundaries(notematrix, s):
                 i += 1
                 continue
 
-            # Handle cases for triads and other patterns
-            if i > 1:  # Ensure there are at least two previous elements to check
+            if i > 1:
                 previous_pattern1 = notematrix.iloc[i - 1]['pattern_index']
                 previous_pattern2 = notematrix.iloc[i - 2]['pattern_index']
 
@@ -358,26 +458,26 @@ def adjust_segment_boundaries(notematrix, s):
 
 
 def segmentgestalt(notematrix):
+    """
+    Segments the note matrix into meaningful groups based on IR patterns and boundaries.
+
+    Parameters:
+    notematrix (pd.DataFrame): A DataFrame containing note attributes.
+
+    Returns:
+    list: A list of segmented DataFrames.
+    """
     if notematrix.empty:
         return None
 
-    # Assign IR pattern indices
     notematrix = assign_ir_pattern_indices(notematrix)
-
-    # Calculate clang boundaries
     clind, clb = calculate_clang_boundaries(notematrix)
-
-    # Calculate segment boundaries
     s = calculate_segment_boundaries(notematrix, clind)
-
-    # Adjust segment boundaries to ensure IR patterns are not split
     s = adjust_segment_boundaries(notematrix, s)
 
-    # Create binary vector for clang boundaries
     c = pd.Series(0, index=range(len(notematrix)))
     c.iloc[clind] = 1
 
-    # Create segments based on adjusted segment boundaries
     segments = []
     start_idx = 0
     for end_idx in s[s == 1].index:
@@ -385,23 +485,30 @@ def segmentgestalt(notematrix):
         start_idx = end_idx + 1
     segments.append(notematrix.iloc[start_idx:])
 
-    # return c, s, segments # return c, s indices for debugging
     return segments
 
+
 def segments_to_distance_matrix(segments: list[pd.DataFrame], cores=None):
+    """
+    Converts segments to a distance matrix using multiprocessing.
+
+    Parameters:
+    segments (list[pd.DataFrame]): A list of segmented DataFrames.
+    cores (int): The number of CPU cores to use for multiprocessing (default is None).
+
+    Returns:
+    np.ndarray: A distance matrix representing distances between segments.
+    """
     if __name__ == '__main__':
 
         if cores is not None and cores > cpu_count():
-            raise ValueError(
-                f"You don't have enough cores! Please specify a value within your system's number of cores. \n Core "
-                f"Count: {cpu_count()}")
+            raise ValueError(f"You don't have enough cores! Please specify a value within your system's number of cores. Core Count: {cpu_count()}")
 
         seg_np = [segment.to_numpy() for segment in segments]
 
         num_segments = len(seg_np)
         distance_matrix = np.zeros((num_segments, num_segments))
 
-        # Create argument list for multiprocessing
         args_list = []
         for i in range(num_segments):
             for j in range(i + 1, num_segments):
@@ -413,46 +520,47 @@ def segments_to_distance_matrix(segments: list[pd.DataFrame], cores=None):
             def log_message(message):
                 message_list.append(message)
 
-            # Use multiprocessing Pool to parallelize the calculations
             with Pool(cores) as pool:
                 results = pool.map(worker.calculate_distance, args_list)
 
-            # Update distance matrix with the results
             for i, j, distance, message in results:
                 distance_matrix[i, j] = distance
                 distance_matrix[j, i] = distance  # Reflect along the diagonal
                 log_message(message)
 
-            # Print messages from the shared list
             for message in message_list:
                 print(message)
 
         return distance_matrix
 
 
-# segments to graph function
 def segments_to_graph(k: int, segments: list[pd.DataFrame], labeled_segments, cores=None):
-    # Convert segments to a distance matrix
+    """
+    Converts segments to a k-NN graph and ensures connectivity.
+
+    Parameters:
+    k (int): The number of neighbors for k-NN graph.
+    segments (list[pd.DataFrame]): A list of segmented DataFrames.
+    labeled_segments (list): A list of labeled segments.
+    cores (int): The number of CPU cores to use for multiprocessing (default is None).
+
+    Returns:
+    tuple: A tuple containing:
+        - networkx.Graph: The resulting k-NN graph.
+        - np.ndarray: The distance matrix used to create the graph.
+    """
     distance_matrix = segments_to_distance_matrix(segments, cores=cores)
-
-    # Compute the k-NN graph
     knn_graph = kneighbors_graph(distance_matrix, n_neighbors=k, mode='connectivity')
-
-    # Convert the k-NN graph to a NetworkX graph
     G = nx.from_scipy_sparse_array(knn_graph)
 
-    # Add segment data as attributes to each node
     for i in range(len(segments)):
-        G.nodes[i]['segment'] = labeled_segments[i]  # print shit
+        G.nodes[i]['segment'] = labeled_segments[i]
 
-    # Detect if the graph is disjoint
     if not nx.is_connected(G):
         print("The KNN graph is disjoint. Ensuring connectivity...")
 
-        # Calculate the connected components
         components = list(nx.connected_components(G))
 
-        # Connect the components
         for i in range(len(components) - 1):
             min_dist = np.inf
             closest_pair = None
@@ -463,7 +571,6 @@ def segments_to_graph(k: int, segments: list[pd.DataFrame], labeled_segments, co
                         min_dist = dist
                         closest_pair = (node1, node2)
 
-            # Add an edge between the closest pair of nodes from different components
             G.add_edge(closest_pair[0], closest_pair[1])
 
     return G, distance_matrix
