@@ -174,7 +174,7 @@ def calculate_ir_symbol(interval1, interval2, threshold=5):
         return 'VR'
 
 
-def assign_ir_symbols(score_array):
+def assign_ir_symbols(note_array):
     """
     Assigns IR symbols and colors to each element in the score array.
 
@@ -215,7 +215,7 @@ def assign_ir_symbols(score_array):
         current_group.clear()
         group_pitches.clear()
 
-    for element in score_array:
+    for element in note_array:
         if isinstance(element, note.Note):
             current_group.append(element)
             group_pitches.append(element.pitch.ps)
@@ -489,6 +489,45 @@ def segmentgestalt(notematrix):
     return segments
 
 
+def preprocess_segments(segments: list[pd.DataFrame]) -> list[pd.DataFrame]:
+    """
+    Drops the pattern_index column and one-hot encodes the ir_symbol column for each DataFrame in the list of segments.
+
+    Ensures that each DataFrame has columns for all specified states.
+
+    Parameters:
+    segments (list[pd.DataFrame]): List of DataFrames representing segments.
+
+    Returns:
+    list[pd.DataFrame]: List of preprocessed DataFrames.
+    """
+    # Define the possible states
+    states = ['P', 'D', 'IP', 'ID', 'VP', 'R', 'IR', 'VR', 'M', 'd', 'rest']
+    state_columns = [f'ir_symbol_{state}' for state in states]
+
+    preprocessed_segments = []
+
+    for segment in segments:
+        # Drop the pattern_index column
+        segment = segment.drop(columns=['pattern_index'])
+
+        # One-hot encode the ir_symbol column
+        segment = pd.get_dummies(segment, columns=['ir_symbol'])
+
+        # Ensure all state columns are present
+        for state_column in state_columns:
+            if state_column not in segment.columns:
+                segment[state_column] = 0
+        segment[state_columns] = segment[state_columns].astype(int)
+
+        # Reorder columns to ensure the state columns are in the correct order
+        segment = segment[['onset_beats', 'duration_beats', 'midi_pitch'] + state_columns]
+
+        preprocessed_segments.append(segment)
+
+    return preprocessed_segments
+
+
 def segments_to_distance_matrix(segments: list[pd.DataFrame], cores=None):
     """
     Converts segments to a distance matrix using multiprocessing.
@@ -500,40 +539,38 @@ def segments_to_distance_matrix(segments: list[pd.DataFrame], cores=None):
     Returns:
     np.ndarray: A distance matrix representing distances between segments.
     """
-    if __name__ == '__main__':
+    if cores is not None and cores > cpu_count():
+        raise ValueError(f"You don't have enough cores! Please specify a value within your system's number of "
+                         f"cores. Core Count: {cpu_count()}")
 
-        if cores is not None and cores > cpu_count():
-            raise ValueError(f"You don't have enough cores! Please specify a value within your system's number of "
-                             f"cores. Core Count: {cpu_count()}")
+    seg_np = [segment.to_numpy() for segment in segments]
 
-        seg_np = [segment.to_numpy() for segment in segments]
+    num_segments = len(seg_np)
+    distance_matrix = np.zeros((num_segments, num_segments))
 
-        num_segments = len(seg_np)
-        distance_matrix = np.zeros((num_segments, num_segments))
+    args_list = []
+    for i in range(num_segments):
+        for j in range(i + 1, num_segments):
+            args_list.append((i, j, segments[i], segments[j]))
 
-        args_list = []
-        for i in range(num_segments):
-            for j in range(i + 1, num_segments):
-                args_list.append((i, j, segments[i], segments[j]))
+    with Manager() as manager:
+        message_list = manager.list()
 
-        with Manager() as manager:
-            message_list = manager.list()
+        def log_message(message):
+            message_list.append(message)
 
-            def log_message(message):
-                message_list.append(message)
+        with Pool(cores) as pool:
+            results = pool.map(worker.calculate_distance, args_list)
 
-            with Pool(cores) as pool:
-                results = pool.map(worker.calculate_distance, args_list)
+        for i, j, distance, message in results:
+            distance_matrix[i, j] = distance
+            distance_matrix[j, i] = distance  # Reflect along the diagonal
+            log_message(message)
 
-            for i, j, distance, message in results:
-                distance_matrix[i, j] = distance
-                distance_matrix[j, i] = distance  # Reflect along the diagonal
-                log_message(message)
+        for message in message_list:
+            print(message)
 
-            for message in message_list:
-                print(message)
-
-        return distance_matrix
+    return distance_matrix
 
 
 def segments_to_graph(k: int, segments: list[pd.DataFrame], labeled_segments, cores=None):
