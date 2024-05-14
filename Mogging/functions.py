@@ -93,7 +93,7 @@ def recreate_score(elements_df):
     return score
 
 
-def parse_score_elements(score):
+def parse_score_elements(score: stream.Score) -> tuple[pd.DataFrame, list, list]:
     """
     Parses a music21 score object into a DataFrame of note attributes and a list of note and chord elements.
 
@@ -104,7 +104,6 @@ def parse_score_elements(score):
     tuple: A tuple containing:
         - pd.DataFrame: A DataFrame with onset, duration, and pitch for each note.
         - list: A list of note and chord elements.
-        - list: A placeholder list for additional elements (currently empty).
     """
     trashed_elements = 0
     narr = []
@@ -113,22 +112,24 @@ def parse_score_elements(score):
 
     for part in score.parts:
         for element in part.flatten():
+            sarr.append(element)
+            row = [element.offset, element.duration.quarterLength]
+
             if isinstance(element, chord.Chord):
-                row = [element.offset, element.duration.quarterLength, element.root().midi]
+                row.append(element.root().midi)
                 nmat.loc[len(nmat)] = row
                 narr.append(element)
             elif isinstance(element, note.Rest):
-                row = [element.offset, element.duration.quarterLength, 0]
+                row.append(0)  # Representing rest with 0 pitch
+                nmat.loc[len(nmat)] = row
+                narr.append(element)
+            elif isinstance(element, note.Note):
+                row.append(element.pitch.midi)
                 nmat.loc[len(nmat)] = row
                 narr.append(element)
             else:
-                try:
-                    row = [element.offset, element.duration.quarterLength, element.pitch.midi]
-                    nmat.loc[len(nmat)] = row
-                    narr.append(element)
-                except:
-                    trashed_elements += 1
-                    # print(f"Trashed element #{trashed_elements}:\n{note}") # for debugging
+                trashed_elements += 1
+
     return nmat, narr, sarr
 
 
@@ -502,7 +503,8 @@ def segments_to_distance_matrix(segments: list[pd.DataFrame], cores=None):
     if __name__ == '__main__':
 
         if cores is not None and cores > cpu_count():
-            raise ValueError(f"You don't have enough cores! Please specify a value within your system's number of cores. Core Count: {cpu_count()}")
+            raise ValueError(f"You don't have enough cores! Please specify a value within your system's number of "
+                             f"cores. Core Count: {cpu_count()}")
 
         seg_np = [segment.to_numpy() for segment in segments]
 
