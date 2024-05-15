@@ -10,6 +10,11 @@ from networkx.algorithms.cuts import conductance
 from IPython.display import display, HTML
 from pyvis.network import Network
 
+# # Usage
+# Current flow: \
+# converter.parse() output -> parse_score_elements() ->
+# assign_ir_symbols -> ir_symbols_to_matrix ->
+# assign_ir_pattern_indices -> segmentgestalt
 
 def extract_score_elements(score):
     """
