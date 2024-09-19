@@ -419,46 +419,39 @@ def adjust_segment_boundaries(notematrix, s):
     """
     adjusted_s = s.copy()
     indices_with_ones = np.where(s == 1)[0].tolist()
-    i = 0
 
-    while i < len(notematrix):
-        if adjusted_s.iloc[i] == 1:
-            current_pattern = notematrix.iloc[i]['pattern_index']
-            ir_symbol = notematrix.iloc[i]['ir_symbol']
+    for i in indices_with_ones:
+        current_pattern = notematrix.iloc[i]['pattern_index']
+        ir_symbol = notematrix.iloc[i]['ir_symbol']
 
-            if ir_symbol == 'M' or ir_symbol == 'rest':
-                i += 1
-                continue
-            elif ir_symbol == 'd':
-                if 0 < i < len(notematrix) - 1:
-                    prev_index = indices_with_ones[indices_with_ones.index(i) - 1] if indices_with_ones.index(i) > 0 else 0
-                    next_index = indices_with_ones[indices_with_ones.index(i) + 1] if indices_with_ones.index(i) < len(indices_with_ones) - 1 else len(notematrix) - 1
+        if ir_symbol == 'M' or ir_symbol == 'rest':
+            continue
+        elif ir_symbol == 'd':
+            if 0 < i < len(notematrix) - 1:
+                prev_index = indices_with_ones[indices_with_ones.index(i) - 1] if indices_with_ones.index(i) > 0 else 0
+                next_index = indices_with_ones[indices_with_ones.index(i) + 1] if indices_with_ones.index(i) < len(
+                    indices_with_ones) - 1 else len(notematrix) - 1
 
-                    if (i - prev_index) > (next_index - i):
-                        adjusted_s.iloc[i] = 0
-                        adjusted_s.iloc[i + 1] = 1
-                    else:
-                        adjusted_s.iloc[i] = 0
-                        adjusted_s.iloc[i - 1] = 1
-                i += 1
-                continue
-
-            if i > 1:
-                previous_pattern1 = notematrix.iloc[i - 1]['pattern_index']
-                previous_pattern2 = notematrix.iloc[i - 2]['pattern_index']
-
-                if (current_pattern == previous_pattern1) and (current_pattern == previous_pattern2):
-                    i += 1
-                    continue
-                elif current_pattern == previous_pattern1 and current_pattern != previous_pattern2:
+                if (i - prev_index) > (next_index - i):
                     adjusted_s.iloc[i] = 0
                     adjusted_s.iloc[i + 1] = 1
-                elif current_pattern != previous_pattern1 and current_pattern != previous_pattern2:
+                else:
                     adjusted_s.iloc[i] = 0
                     adjusted_s.iloc[i - 1] = 1
-            i += 1
-        else:
-            i += 1
+            continue
+
+        if i > 1:
+            previous_pattern1 = notematrix.iloc[i - 1]['pattern_index']
+            previous_pattern2 = notematrix.iloc[i - 2]['pattern_index']
+
+            if (current_pattern == previous_pattern1) and (current_pattern == previous_pattern2):
+                continue
+            elif current_pattern == previous_pattern1 and current_pattern != previous_pattern2:
+                adjusted_s.iloc[i] = 0
+                adjusted_s.iloc[i + 1] = 1
+            elif current_pattern != previous_pattern1 and current_pattern != previous_pattern2:
+                adjusted_s.iloc[i] = 0
+                adjusted_s.iloc[i - 1] = 1
 
     return adjusted_s
 
