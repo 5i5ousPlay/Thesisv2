@@ -26,6 +26,8 @@ def extract_score_elements(score):
     Returns:
     pd.DataFrame: A DataFrame containing part index, offset, duration, type, and pitch information for each element.
     """
+    score = score.expandRepeats()
+
     elements = []
 
     for part_index, part in enumerate(score.parts):
