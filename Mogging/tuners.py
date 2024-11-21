@@ -7,6 +7,7 @@ from scipy.stats import shapiro
 from scipy.stats import ttest_ind, mannwhitneyu
 from statistics import mean
 from sklearn.cluster import SpectralClustering
+from networkx.algorithms.community import kernighan_lin_bisection
 from graph_kernel_hypo import compare_graphs_kernel
 import matplotlib.pyplot as plt
 
@@ -54,30 +55,31 @@ class KNNGraphTuner:
 
         return G
 
-    def _spectral_partition(self, graph: nx.Graph, distance_matrix: np.ndarray):
-        adjacency_matrix = nx.to_numpy_array(graph)
-        spectral_clustering = SpectralClustering(
-            n_clusters=2,
-            affinity='precomputed',
-            random_state=42,
-            n_init=100
-            )
-        labels = spectral_clustering.fit_predict(adjacency_matrix)
+    def _partition(self, graph: nx.Graph, distance_matrix: np.ndarray):
+        # Convert unweighted graph to weighted using distance matrix
+        for u, v in graph.edges():
+            graph[u][v]['weight'] = 1 / (distance_matrix[u, v] + 1e-5)  # Add a small constant to avoid division by zero
 
-        group1 = [node for node, label in zip(graph.nodes(), labels) if label == 0]
-        group2 = [node for node, label in zip(graph.nodes(), labels) if label == 1]
+        # Use Kernighan-Lin bisection to split the graph into two partitions
+        partition = kernighan_lin_bisection(graph, weight="weight")
 
+        # Extract nodes from the partitions
+        group1 = list(partition[0])
+        group2 = list(partition[1])
+
+        # Create subgraphs
         subgraph1 = graph.subgraph(group1).copy()
         subgraph2 = graph.subgraph(group2).copy()
 
-        group1_indices = np.array(group1)
-        group2_indices = np.array(group2)
+        # Comment this in if you want some subgraph samples
 
-        subgraph1_distance_matrix = distance_matrix[np.ix_(group1_indices, group1_indices)]
-        subgraph2_distance_matrix = distance_matrix[np.ix_(group2_indices, group2_indices)]
-
-        subgraph1 = self._ensure_connectivity(subgraph1, subgraph1_distance_matrix)
-        subgraph2 = self._ensure_connectivity(subgraph2, subgraph2_distance_matrix)
+        # plt.figure(figsize=(8, 6))
+        # nx.draw(subgraph1, with_labels=True, node_color='lightblue', edge_color='gray')
+        # plt.show()
+        #
+        # plt.figure(figsize=(8, 6))
+        # nx.draw(subgraph2, with_labels=True, node_color='lightgreen', edge_color='gray')
+        # plt.show()
 
         return subgraph1, subgraph2
 
@@ -88,7 +90,7 @@ class KNNGraphTuner:
         graphs = []
         for distance_matrix in self.distance_matrices:
             graph = self._construct_graph(distance_matrix=distance_matrix, k=k)
-            partition1, partition2 = self._spectral_partition(graph=graph, distance_matrix=distance_matrix)
+            partition1, partition2 = self._partition(graph=graph, distance_matrix=distance_matrix)
             graphs.append(
                 {
                     "split_graphs": (partition1, partition2),
