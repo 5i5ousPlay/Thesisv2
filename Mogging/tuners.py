@@ -13,6 +13,10 @@ import matplotlib.pyplot as plt
 
 
 class KNNGraphTuner:
+    """
+    Tuner class for calculating the p-values for within and between graph scores
+    for each corresponding k values within a specified range.
+    """
     distance_matrices = None
     graph_kernel = None
     min_k = None
@@ -21,6 +25,15 @@ class KNNGraphTuner:
 
     def __init__(self, distance_matrices: list[np.ndarray], graph_kernel: grakel.kernels.Kernel,
                  min_k=1, max_k=10, k_step=1):
+        """
+        Initializes a Tuner instance.
+        Args:
+            distance_matrices (list): List of numpy arrays (2D distance matrices)
+            graph_kernel (grakel.kernels.Kernel): Graph kernel used for calculating within and between graph scores
+            min_k (int): minimum k value to test
+            max_k (int): maximum k value to test
+            k_step (int): interval step for k value testing
+        """
         self.distance_matrices = distance_matrices
         self.graph_kernel = graph_kernel
         self.min_k = min_k
@@ -110,7 +123,15 @@ class KNNGraphTuner:
 
         return within_graph_scores, between_graph_scores
 
-    def calculate_graph_statistics(self):
+    def calculate_graph_statistics(self) -> pd.DataFrame:
+        """
+        Calculates the normality of the within and between graph scores as well as the
+        corresponding p-value for each k-value within the specified range.
+
+        Returns:
+            graph_statistics (pd.DataFrame): Dataframe containing the parametric and non-parametric
+            p-values for each k-value within the specified range.
+        """
         graph_statistics = pd.DataFrame(columns=['k', 'normality_wtihin', 'normality_between', 'average_within',
                                                  'average_between', 'parametric_p_value', 'non_parametric_p_value'])
         for k in range(self.min_k, self.max_k, self.k_step):
@@ -139,7 +160,17 @@ class KNNGraphTuner:
 
         return graph_statistics
 
-    def calculate_and_graph(self):
+    def calculate_and_graph(self) -> pd.DataFrame:
+        """
+        Calculates the normality of the within and between graph scores as well as the
+        corresponding p-value for each k-value within the specified range. Generates
+        a graph comparing p-values against varying k-values relative to the 0.05
+        significance threshold.
+
+        Returns:
+            graph_statistics (pd.DataFrame): Dataframe containing the parametric and non-parametric
+            p-values for each k-value within the specified range.
+        """
         graph_statistics = self.calculate_graph_statistics()
         plt.figure(figsize=(10, 6))
 
@@ -150,7 +181,7 @@ class KNNGraphTuner:
 
         plt.xlabel('k Values')
         plt.ylabel('P-Values')
-        plt.title('P-Values vs. k')
+        plt.title(f'P-Values vs. k ({self.graph_kernel.__class__.__name__})')
         plt.axhline(y=0.05, color='red', linestyle=':', label='Significance Threshold (p=0.05)')
         plt.legend(loc='best')
 
