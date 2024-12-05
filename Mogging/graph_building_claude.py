@@ -89,45 +89,47 @@ def get_directories_with_min_files(root_dir, min_file_count=5):
 
 def segments_to_distance_matrix(segments: list[pd.DataFrame], cores=None):
     """
-    Converts musical segments to a distance matrix using parallel processing.
+    Converts segments to a distance matrix using multiprocessing.
 
-    Args:
-        segments (list[pd.DataFrame]): List of segment DataFrames
-        cores (int, optional): Number of CPU cores to use for parallel processing
+    Parameters:
+    segments (list[pd.DataFrame]): A list of segmented DataFrames.
+    cores (int): The number of CPU cores to use for multiprocessing (default is None).
 
     Returns:
-        np.array: Distance matrix comparing all segments
+    np.ndarray: A distance matrix representing distances between segments.
     """
-    if __name__ == '__main__':
-        if cores is not None and cores > cpu_count():
-            raise ValueError(f"Insufficient cores. System has {cpu_count()} cores.")
+    if cores is not None and cores > cpu_count():
+        raise ValueError(f"You don't have enough cores! Please specify a value within your system's number of "
+                         f"cores. Core Count: {cpu_count()}")
 
-        seg_np = [segment.to_numpy() for segment in segments]
-        num_segments = len(seg_np)
-        distance_matrix = np.zeros((num_segments, num_segments))
+    seg_np = [segment.to_numpy() for segment in segments]
 
-        args_list = [(i, j, segments[i], segments[j])
-                     for i in range(num_segments)
-                     for j in range(i + 1, num_segments)]
+    num_segments = len(seg_np)
+    distance_matrix = np.zeros((num_segments, num_segments))
 
-        with Manager() as manager:
-            message_list = manager.list()
+    args_list = []
+    for i in range(num_segments):
+        for j in range(i + 1, num_segments):
+            args_list.append((i, j, segments[i], segments[j]))
 
-            def log_message(message):
-                message_list.append(message)
+    with Manager() as manager:
+        message_list = manager.list()
 
-            with Pool() as pool:
-                results = pool.map(worker.calculate_distance, args_list)
+        def log_message(message):
+            message_list.append(message)
 
-            for i, j, distance, message in results:
-                distance_matrix[i, j] = distance
-                distance_matrix[j, i] = distance
-                log_message(message)
+        with Pool(cores) as pool:
+            results = pool.map(worker.calculate_distance, args_list)
 
-            for message in message_list:
-                print(message)
+        for i, j, distance, message in results:
+            distance_matrix[i, j] = distance
+            distance_matrix[j, i] = distance  # Reflect along the diagonal
+            log_message(message)
 
-        return distance_matrix
+        for message in message_list:
+            print(message)
+
+    return distance_matrix
 
 
 def segments_to_distance_matrices(segments: dict, pickle_dir=None, pickle_file=None):
