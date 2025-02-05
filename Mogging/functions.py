@@ -9,6 +9,7 @@ import matplotlib.pyplot as plt
 from networkx.algorithms.cuts import conductance
 from IPython.display import display, HTML
 from pyvis.network import Network
+import re
 
 # # Usage
 # Current flow: \
@@ -342,11 +343,9 @@ def assign_ir_symbols(note_array):
                                 evaluate_current_group()
                     last_beam_status = beam_status
 
-
-                    evaluate_current_group()
             elif i < num_notes - 1 and get_beam_status(note_array[i + 1]) == 'start' and beam_status == 'single':
                 evaluate_current_group()
-            elif len(current_group) == 3:
+            if len(current_group) == 3:
                 evaluate_current_group()
             last_beam_status = beam_status
 
@@ -468,6 +467,12 @@ def get_onset(notematrix: pd.DataFrame, timetype='beat'):
     """
     if timetype == 'beat':
         return notematrix['onset_beats']
+    else:
+        raise ValueError(f"Invalid timetype: {timetype}")
+
+def get_pitch(notematrix: pd.DataFrame, timetype='beat'):
+    if timetype == 'beat':
+        return notematrix['midi_pitch']
     else:
         raise ValueError(f"Invalid timetype: {timetype}")
 
@@ -629,11 +634,6 @@ def segmentgestalt(notematrix):
     segments.append(notematrix.iloc[start_idx:])
 
     return segments
-
-
-import numpy as np
-import pandas as pd
-from scipy.signal import find_peaks
 
 
 import numpy as np
@@ -929,3 +929,65 @@ def segments_to_graph(k: int, segments: list[pd.DataFrame], labeled_segments, co
             G.add_edge(closest_pair[0], closest_pair[1])
 
     return G, distance_matrix
+
+
+def parse_segments(file_path):
+    """
+    Parses a text file with segments and numerical data into a numpy ndarray.
+
+    Parameters:
+    - file_path (str): Path to the input text file.
+
+    Returns:
+    - np.ndarray: 2D array where each row corresponds to a segment.
+    """
+    data = []  # List to hold all segments
+    current_segment = []  # List to hold numbers of the current segment
+    inside_brackets = False  # Flag to indicate if we are inside brackets
+
+    # Regular expression to match 'Segment' lines
+    segment_pattern = re.compile(r'^Segment\s+\d+')
+
+    with open(file_path, 'r') as file:
+        for line_number, line in enumerate(file, 1):
+            stripped_line = line.strip()
+
+            # Check if the line indicates a new segment
+            if segment_pattern.match(stripped_line):
+                if current_segment:
+                    data.append(current_segment)
+                    current_segment = []
+                continue  # Move to the next line
+
+            # Check if the line contains the start of data
+            if '[' in stripped_line:
+                inside_brackets = True
+                # Remove everything before '['
+                stripped_line = stripped_line.split('[', 1)[1]
+
+            # Check if the line contains the end of data
+            if ']' in stripped_line:
+                # Remove everything after ']'
+                stripped_line = stripped_line.split(']', 1)[0]
+                inside_brackets = False
+
+            if inside_brackets or stripped_line:
+                # Split the line into individual numbers
+                numbers_str = stripped_line.split()
+                try:
+                    # Convert string numbers to floats
+                    numbers = [float(num) for num in numbers_str]
+                    current_segment.extend(numbers)
+                except ValueError as e:
+                    print(f"Error parsing numbers on line {line_number}: {e}")
+                    # Optionally, you can choose to exit or continue
+                    continue
+
+        # After reading all lines, append the last segment
+        if current_segment:
+            data.append(current_segment)
+
+    # Convert the list of lists to a numpy ndarray
+    array = np.array(data)
+
+    return array
